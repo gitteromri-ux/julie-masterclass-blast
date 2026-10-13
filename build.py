@@ -38,13 +38,19 @@ BRANDS = {
 }
 
 # ---------- copy (facts: live masterclass page, 13 Oct 2026) ----------
+def longevity(b):
+    opener = ("eTeacher Group opened <strong>Longevity Life Academy</strong> this year to teach this live, in plain language, and we want our own students to have it first."
+              if b != "lla" else "We opened Longevity Life Academy this year to teach this live, in plain language, and the people who asked about us hear about it first.")
+    return ("<p>Longevity has become one of the most important fields in science. We now know that aging can be measured, slowed and in part reversed, "
+            "and that healthspan, the years lived in full health, depends on sleep, food, movement and daily habits far more than most people assume. "
+            f"The decades ahead can be the best ones. {opener}</p>")
 def event(b):
-    host = "we are hosting" if b == "lla" else "eTeacher Group&rsquo;s new school, <strong>Longevity Life Academy</strong>, is hosting"
+    host = "we are hosting" if b == "lla" else "the Academy is hosting"
     return (f"<p>On <strong>October 27</strong> {host} <strong>The Longevity Masterclass of the Year</strong>: "
             f"60 minutes live on Zoom with <strong>Julie Gibson Clark</strong>, with a second date on <strong>November 14</strong>.</p>")
-JULIE = ("<p>Julie is 56, a working single mother from Phoenix, and the <strong>second slowest-aging human ever measured</strong>. "
-         "Verified testing shows she ages about <strong>eight months for every year</strong>, on a routine that costs about $100 a month. "
-         "She is ranked No. 2 in the world, ahead of Bryan Johnson&rsquo;s two-million-dollar program, and Fortune, Business Insider and the Daily Mail have all covered her.</p>")
+JULIE = ("<p>Julie is the <strong>second slowest-aging human ever measured</strong>. By verified testing she ages <strong>six years in a decade</strong>, "
+         "which places her No. 2 in the world on the Rejuvenation Olympics leaderboard, ahead of Bryan Johnson&rsquo;s two-million-dollar program. "
+         "She is 56, a working single mother from Phoenix, and her routine costs about $100 a month. Fortune, Business Insider and the Daily Mail have all covered her.</p>")
 LEARN = ("<p>In the hour she reveals her complete protocol:</p>"
          "<ul><li>How biological aging is measured, and what actually moves the number</li>"
          "<li>Her rules for food, sleep and movement, with the numbers behind each</li>"
@@ -54,9 +60,9 @@ def access(who):
             f"The VIP seat adds a private 30-minute Q&amp;A with Julie and includes an exclusive <strong>$249 promo code</strong> toward her full course.</p>")
 
 WHY = {
-    "alumni": "<p>As a graduate of {name}, you are part of the eTeacher Group community of students, and we wanted you to have first access to this.</p>",
-    "incomplete": "<p>As a student of {name}, you are part of the eTeacher Group community of students, and we wanted you to have first access to this. It is one live hour, with nothing to prepare and nothing to keep up with afterwards.</p>",
-    "leads": "<p>You asked about {enrol}, which makes you part of the eTeacher Group community, and we wanted you to have first access to this.</p>",
+    "alumni": "<p>As a graduate of {name}, you are part of the eTeacher Group community, so this invitation comes to you first.</p>",
+    "incomplete": "<p>As a student of {name}, you are part of the eTeacher Group community, so this invitation comes to you first. It is one live hour, with nothing to prepare and nothing to keep up with afterwards.</p>",
+    "leads": "<p>You asked about {enrol}, which makes you part of the eTeacher Group community, so this invitation comes to you first.</p>",
 }
 SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
         "incomplete": "{short} students: your Longevity Masterclass invitation",
@@ -72,8 +78,8 @@ EMAILS = [dict(
     brand="lla", id="lla-leads-01", segment="LLA leads, last 3 to 4 months, not enrolled", ac="LGV_Masterclass_Blast_Leads", campaign="lgv_masterclass_blast_leads",
     subject="Your invitation: The Longevity Masterclass of the Year", preheader="60 minutes live on Zoom with Julie Gibson Clark. Seats held for you for 72 hours. From $49.",
     h1="You are invited to <em>The Longevity Masterclass of the Year</em>", hero="julie-zoom-room.jpg",
-    body=[f"<p>{hi()}</p>", "<p>You asked about enrolling in Longevity Life Academy this year, so this invitation reaches you before anyone else.</p>",
-          event("lla"), JULIE, LEARN, access("the people on this list")])]
+    body=[f"<p>{hi()}</p>", "<p>You asked about enrolling in Longevity Life Academy this year, so this invitation reaches you first.</p>",
+          longevity("lla"), event("lla"), JULIE, LEARN, access("the people on this list")])]
 for b in ("iibs", "rosen"):
     B = BRANDS[b]
     for seg in ("alumni", "incomplete", "leads"):
@@ -81,7 +87,7 @@ for b in ("iibs", "rosen"):
             segment={"alumni": "alumni (completed a course)", "incomplete": "students who enrolled and did not finish", "leads": "leads (asked about enrolling, never enrolled)"}[seg],
             ac=f"{b.upper()}_Masterclass_Blast_{seg.capitalize()}", campaign=f"{b}_masterclass_blast",
             subject=SUBJ[seg].format(short=B["short"]), preheader=PRE, h1=H1[seg].format(name=B["name"]), hero=HERO[seg],
-            body=[f"<p>{shalom()}</p>", WHY[seg].format(name=B["name"], enrol=B["enrol"]), event(b), JULIE, LEARN, access(WHO[seg])]))
+            body=[f"<p>{shalom()}</p>", WHY[seg].format(name=B["name"], enrol=B["enrol"]), longevity(b), event(b), JULIE, LEARN, access(WHO[seg])]))
 
 DETAILS = [("Instructor", "Julie Gibson Clark, Longevity Life Academy"), ("Format", "Live on Zoom, 60 minutes"),
            ("Dates", "Tue, October 27, 7:00 PM ET<br>Sat, November 14, 1:00 PM ET"), ("Seats", "From $49"),
