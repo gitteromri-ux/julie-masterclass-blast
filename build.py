@@ -58,9 +58,9 @@ WHY = {
     "incomplete": "<p>As a student of {name}, you are part of the eTeacher Group community of students, and we wanted you to have first access to this. It is one live hour, with nothing to prepare and nothing to keep up with afterwards.</p>",
     "leads": "<p>You asked about {enrol}, which makes you part of the eTeacher Group community, and we wanted you to have first access to this.</p>",
 }
-SUBJ = {"alumni": "{short} alumni: your invitation to the Longevity Masterclass",
-        "incomplete": "{short} students: your invitation to the Longevity Masterclass",
-        "leads": "From {short}: your invitation to the Longevity Masterclass"}
+SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
+        "incomplete": "{short} students: your Longevity Masterclass invitation",
+        "leads": "From {short}: your Longevity Masterclass invitation"}
 H1 = {"alumni": "{name} alumni are invited to <em>The Longevity Masterclass of the Year</em>",
       "incomplete": "{name} students are invited to <em>The Longevity Masterclass of the Year</em>",
       "leads": "You are invited to <em>The Longevity Masterclass of the Year</em>"}
@@ -182,13 +182,18 @@ def render(e):
 # ---------- write files, text exports, manifest ----------
 def visible(out):
     t = re.sub(r"<[^>]+>", " ", re.sub(r"<style.*?</style>", "", out, flags=re.S)); t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
-    return html.unescape(re.sub(r"\s+", " ", t)).strip()
+    t = html.unescape(re.sub(r"\s+", " ", t)).strip()
+    return re.sub(r"\s+([,.:;])", r"\1", t)
 def plain(e):
     b = BRANDS[e["brand"]]; parts = [f"Subject: {e['subject']}", f"Preheader: {e['preheader']}", "", visible(e["h1"]), ""]
     for x in e["body"]:
         x = x.replace("%IF !empty($FIRSTNAME)%", "").replace("%ELSE%Shalom,%/IF%", "").replace("%ELSE%Hi,%/IF%", "")
-        x = re.sub(r"<li>", "\n- ", x); x = re.sub(r"</li>", "", x); parts.append(visible(x) if "<li>" not in x else html.unescape(re.sub(r"<[^>]+>", "", x)).strip()); parts.append("")
-    parts += [f"[Button] {html.unescape(b['button'])}", "", visible(b["sign"].replace("<br>", "\n")).replace(" ", " ")]
+        if "<li>" in x:
+            lead = visible(x.split("<ul>")[0]); items = re.findall(r"<li>(.*?)</li>", x)
+            parts.append(lead); parts += ["- " + visible(i) for i in items]
+        else: parts.append(visible(x))
+        parts.append("")
+    parts += [f"[Button] {html.unescape(b['button'])}", ""] + [visible(l) for l in b["sign"].split("<br>")]
     return "\n".join(parts)
 
 for d in ("iibs", "rosen", "lla", "text", "v1", "v2"):
