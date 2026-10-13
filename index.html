@@ -1,152 +1,149 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Julie Masterclass blast · 3 funnels · 7 install-ready emails · 14 Oct 2026</title>
+<title>Julie Masterclass invitation emails</title>
 <style>
-:root{--bg:#0d1117;--fg:#e6edf3;--muted:#9aa4b2;--card:#161b22;--line:#30363d;--gold:#F5C451}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Inter,Arial,sans-serif}
-header{padding:28px 24px 18px;border-bottom:1px solid var(--line)} header h1{margin:0 0 6px;font-size:24px} header p{margin:4px 0;color:var(--muted)}
-header a{color:var(--gold)}
-.count{display:inline-block;background:var(--gold);color:#0d1117;font-weight:800;border-radius:999px;padding:2px 10px;margin-left:8px}
-nav.toc{display:flex;flex-wrap:wrap;gap:6px;padding:14px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.96);backdrop-filter:blur(6px);z-index:5;max-height:120px;overflow:auto}
-nav.toc a{font-size:12px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 9px} nav.toc a small{color:var(--muted)} nav.toc a:hover{border-color:var(--gold)}
-main{max-width:1100px;margin:0 auto;padding:16px 24px 80px}
-section.funnel{margin:34px 0} section.funnel h2{font-size:20px;margin:0;color:var(--gold);font-family:ui-monospace,Menlo,monospace} .fdesc{margin:4px 0 14px;color:var(--muted)}
-article.email{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:18px 0;overflow:hidden}
-.meta{display:flex;justify-content:space-between;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.tier{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#0d1117;background:var(--c);border-radius:6px;padding:2px 8px} .msg{font-weight:800;margin-left:6px;font-family:ui-monospace,Menlo,monospace}
-.subject{font-size:17px;font-weight:700;margin:8px 0 4px} .dest{color:var(--muted);font-size:13px} .dest code{font-size:11.5px;color:#9ecbff;word-break:break-all}
-.actions{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
-.btn{font:inherit;font-weight:700;font-size:14px;padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:#21262d;color:var(--fg);cursor:pointer;text-decoration:none;min-height:40px;display:inline-flex;align-items:center}
-.btn.copy{background:var(--gold);color:#0d1117;border-color:var(--gold)} .btn.copy.ok{background:#3fb950;border-color:#3fb950} .btn:hover{filter:brightness(1.08)}
-iframe{display:block;width:100%;border:0;background:#fff;min-height:700px}
-@media (max-width:640px){.meta{flex-direction:column} main{padding:12px}}
+  :root{--bg:#F5F5F7;--ink:#1D1D1F;--mute:#6E6E73;--line:#E5E5EA;--blue:#0071E3}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  header{max-width:1180px;margin:0 auto;padding:72px 32px 24px}
+  h1{font-size:56px;line-height:1.07;letter-spacing:-.02em;margin:0 0 14px;font-weight:700}
+  header p{font-size:21px;line-height:1.4;color:var(--mute);margin:0}
+  main{max-width:1180px;margin:0 auto;padding:0 32px 96px}
+  section{margin-top:56px}
+  h2{font-size:40px;line-height:1.1;letter-spacing:-.015em;margin:0 0 24px;font-weight:700}
+  .email{display:grid;grid-template-columns:360px 1fr;gap:32px;background:#fff;border-radius:24px;padding:32px;margin-bottom:24px;border:1px solid var(--line)}
+  .side h3{font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px;font-weight:700}
+  .side .sub{font-size:17px;line-height:1.45;margin:0 0 6px;color:var(--ink)}
+  .side .from{font-size:15px;line-height:1.45;margin:0 0 24px;color:var(--mute)}
+  .actions{display:flex;flex-direction:column;gap:10px}
+  .b{display:block;width:100%;text-align:center;font:inherit;font-size:17px;font-weight:600;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+  .b:hover{background:#F5F5F7}
+  .b.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .b.primary:hover{background:#0077ED}
+  .b.ok{background:#1D1D1F;border-color:#1D1D1F;color:#fff}
+  iframe{width:100%;border:1px solid var(--line);border-radius:16px;background:#F5F0E5;display:block;min-height:900px}
+  @media(max-width:900px){.email{grid-template-columns:1fr}h1{font-size:40px}h2{font-size:32px}header{padding:48px 20px 16px}main{padding:0 20px 64px}}
 </style></head><body>
 <header>
-  <h1>Julie Masterclass blast for Chris &amp; Sandra <span class="count">3 funnels · 7 emails</span></h1>
-  <p>Install-ready HTML for ActiveCampaign one-time campaigns. Same anatomy as the approved masterclass set (640px card, header, divider, alert bar, 1200×700 hero, Georgia h1, 17px body, pill button, details box, second button, signoff, dark footer; tokens %FIRSTNAME% with ActiveCampaign's blank-name fallback, %UNSUBSCRIBELINK%, %UPDATELINK%). School sends carry the school logo and the eTeacher Group logo in the header and the school's “by eTeacher Group” copyright and Ramat Gan address in the footer. Facts from the live Julie page: Tue 27 Oct 7:00 PM ET or Sat 14 Nov 1:00 PM ET, seats from $49, VIP $79 with private 30-min Q&amp;A and the $249 Blueprint promo code, 14-day full refund.</p>
-  <p>Per email: <b>Copy HTML</b> (production HTML to clipboard) · <b>Download .html</b> · <b>Open</b> · <b>Download image</b> (the hero, 1200×700 JPG) · <b>Copy text</b> (subject, preheader, body as plain text). Also: <a href="AUDIT.md">AUDIT.md</a> and <a href="README.md">README.md</a>.</p>
+  <h1>Julie Masterclass invitation emails</h1>
+  <p>Seven emails for three schools. Download the HTML, or copy it straight into ActiveCampaign.</p>
 </header>
-<nav class="toc"><a href="#lla-leads-01">LLA-LEADS-01 <small>LLA</small></a><a href="#iibs-alumni-01">IIBS-ALUMNI-01 <small>IIBS</small></a><a href="#iibs-incomplete-01">IIBS-INCOMPLETE-01 <small>IIBS</small></a><a href="#iibs-leads-01">IIBS-LEADS-01 <small>IIBS</small></a><a href="#rosen-alumni-01">ROSEN-ALUMNI-01 <small>ROSEN</small></a><a href="#rosen-incomplete-01">ROSEN-INCOMPLETE-01 <small>ROSEN</small></a><a href="#rosen-leads-01">ROSEN-LEADS-01 <small>ROSEN</small></a></nav>
 <main>
-<section class="funnel"><h2>Funnel 1 · Longevity Life Academy <span class="count" style="background:#5EB6FF">1 email</span></h2><p class="fdesc">LLA leads from the last 3 to 4 months who did not enrol in the Blueprint. Sender: Emma | Longevity Advisor &lt;advisor@longevitylifeacademy.com&gt;.</p><article class="email" id="lla-leads-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#5EB6FF">LLA</span> <span class="msg">LLA-LEADS-01</span>
-      <div class="subject">LGV_Masterclass_Blast_Leads | LLA leads, last 3 to 4 months, not enrolled</div>
-      <div class="dest"><b>Subject</b> (54): Your invitation: The Longevity Masterclass of the Year<br><b>Preheader</b> (91): 60 minutes live on Zoom with Julie Gibson Clark. Seats held for you for 72 hours. From $49.<br><b>Sender</b>: Emma | Longevity Advisor &lt;advisor@longevitylifeacademy.com&gt;<br><b>Button</b> “Reserve My Seat” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=lgv_masterclass_blast_leads&amp;utm_content=lla-leads-01#pricing</code><br><b>Hero</b> julie-zoom-room.jpg · 1200x700 · 117KB &nbsp;·&nbsp; <b>Words</b> 409 (body 216)</div>
-    </div>
+<section><h2>Longevity Life Academy</h2><article class="email" id="lla-leads-01">
+  <div class="side">
+    <h3>Leads</h3>
+    <p class="sub">Your invitation: The Longevity Masterclass of the Year</p>
+    <p class="from">Emma | Longevity Advisor &lt;advisor@longevitylifeacademy.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="lla/lla-leads-01.html">Copy HTML</button>
-      <a class="btn dl" href="lla/lla-leads-01.html" download="lla-leads-01.html">Download .html</a>
-      <a class="btn raw" href="lla/lla-leads-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-zoom-room.jpg" download="lla-leads-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/lla-leads-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="lla/lla-leads-01.html" download="lla-leads-01.html">Download HTML</a>
+      <button class="b copy" data-file="lla/lla-leads-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/lla-leads-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-room.jpg" download="lla-leads-01-image.jpg">Download image</a>
+      <a class="b" href="lla/lla-leads-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="lla-leads-01" data-src="lla/lla-leads-01.html" loading="lazy" scrolling="no"></iframe>
 </article></section>
-<section class="funnel"><h2>Funnel 2 · Israel Institute of Biblical Studies <span class="count" style="background:#F5C451">3 emails</span></h2><p class="fdesc">Three use cases: alumni, enrolled and did not finish, leads. Sender: Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;.</p><article class="email" id="iibs-alumni-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#F5C451">IIBS</span> <span class="msg">IIBS-ALUMNI-01</span>
-      <div class="subject">IIBS_Masterclass_Blast_Alumni | alumni (completed a course)</div>
-      <div class="dest"><b>Subject</b> (69): Israel Biblical Studies alumni: your Longevity Masterclass invitation<br><b>Preheader</b> (100): First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49.<br><b>Sender</b>: Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;<br><b>Button</b> “RESERVE MY SEAT” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=iibs_masterclass_blast&amp;utm_content=iibs-alumni-01#pricing</code><br><b>Hero</b> julie-zoom-host.jpg · 1200x700 · 109KB &nbsp;·&nbsp; <b>Words</b> 444 (body 236)</div>
-    </div>
+<section><h2>Israel Institute of Biblical Studies</h2><article class="email" id="iibs-alumni-01">
+  <div class="side">
+    <h3>Alumni</h3>
+    <p class="sub">Israel Biblical Studies alumni: your Longevity Masterclass invitation</p>
+    <p class="from">Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="iibs/iibs-alumni-01.html">Copy HTML</button>
-      <a class="btn dl" href="iibs/iibs-alumni-01.html" download="iibs-alumni-01.html">Download .html</a>
-      <a class="btn raw" href="iibs/iibs-alumni-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-zoom-host.jpg" download="iibs-alumni-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/iibs-alumni-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="iibs/iibs-alumni-01.html" download="iibs-alumni-01.html">Download HTML</a>
+      <button class="b copy" data-file="iibs/iibs-alumni-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/iibs-alumni-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-host.jpg" download="iibs-alumni-01-image.jpg">Download image</a>
+      <a class="b" href="iibs/iibs-alumni-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="iibs-alumni-01" data-src="iibs/iibs-alumni-01.html" loading="lazy" scrolling="no"></iframe>
 </article><article class="email" id="iibs-incomplete-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#F5C451">IIBS</span> <span class="msg">IIBS-INCOMPLETE-01</span>
-      <div class="subject">IIBS_Masterclass_Blast_Incomplete | students who enrolled and did not finish</div>
-      <div class="dest"><b>Subject</b> (71): Israel Biblical Studies students: your Longevity Masterclass invitation<br><b>Preheader</b> (100): First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49.<br><b>Sender</b>: Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;<br><b>Button</b> “RESERVE MY SEAT” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=iibs_masterclass_blast&amp;utm_content=iibs-incomplete-01#pricing</code><br><b>Hero</b> julie-portrait.jpg · 1200x700 · 98KB &nbsp;·&nbsp; <b>Words</b> 460 (body 252)</div>
-    </div>
+  <div class="side">
+    <h3>Students who did not finish</h3>
+    <p class="sub">Israel Biblical Studies students: your Longevity Masterclass invitation</p>
+    <p class="from">Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="iibs/iibs-incomplete-01.html">Copy HTML</button>
-      <a class="btn dl" href="iibs/iibs-incomplete-01.html" download="iibs-incomplete-01.html">Download .html</a>
-      <a class="btn raw" href="iibs/iibs-incomplete-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-portrait.jpg" download="iibs-incomplete-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/iibs-incomplete-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="iibs/iibs-incomplete-01.html" download="iibs-incomplete-01.html">Download HTML</a>
+      <button class="b copy" data-file="iibs/iibs-incomplete-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/iibs-incomplete-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-portrait.jpg" download="iibs-incomplete-01-image.jpg">Download image</a>
+      <a class="b" href="iibs/iibs-incomplete-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="iibs-incomplete-01" data-src="iibs/iibs-incomplete-01.html" loading="lazy" scrolling="no"></iframe>
 </article><article class="email" id="iibs-leads-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#F5C451">IIBS</span> <span class="msg">IIBS-LEADS-01</span>
-      <div class="subject">IIBS_Masterclass_Blast_Leads | leads (asked about enrolling, never enrolled)</div>
-      <div class="dest"><b>Subject</b> (67): From Israel Biblical Studies: your Longevity Masterclass invitation<br><b>Preheader</b> (100): First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49.<br><b>Sender</b>: Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;<br><b>Button</b> “RESERVE MY SEAT” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=iibs_masterclass_blast&amp;utm_content=iibs-leads-01#pricing</code><br><b>Hero</b> julie-zoom-grid.jpg · 1200x700 · 104KB &nbsp;·&nbsp; <b>Words</b> 443 (body 240)</div>
-    </div>
+  <div class="side">
+    <h3>Leads</h3>
+    <p class="sub">From Israel Biblical Studies: your Longevity Masterclass invitation</p>
+    <p class="from">Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="iibs/iibs-leads-01.html">Copy HTML</button>
-      <a class="btn dl" href="iibs/iibs-leads-01.html" download="iibs-leads-01.html">Download .html</a>
-      <a class="btn raw" href="iibs/iibs-leads-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-zoom-grid.jpg" download="iibs-leads-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/iibs-leads-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="iibs/iibs-leads-01.html" download="iibs-leads-01.html">Download HTML</a>
+      <button class="b copy" data-file="iibs/iibs-leads-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/iibs-leads-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-grid.jpg" download="iibs-leads-01-image.jpg">Download image</a>
+      <a class="b" href="iibs/iibs-leads-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="iibs-leads-01" data-src="iibs/iibs-leads-01.html" loading="lazy" scrolling="no"></iframe>
 </article></section>
-<section class="funnel"><h2>Funnel 3 · Rosen School of Hebrew <span class="count" style="background:#A78BFA">3 emails</span></h2><p class="fdesc">Three use cases: alumni, enrolled and did not finish, leads. Sender: Noa Shalev, Campus Manager &lt;admissions@rosenhebrewschool.com&gt;.</p><article class="email" id="rosen-alumni-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#A78BFA">ROSEN</span> <span class="msg">ROSEN-ALUMNI-01</span>
-      <div class="subject">ROSEN_Masterclass_Blast_Alumni | alumni (completed a course)</div>
-      <div class="dest"><b>Subject</b> (51): Rosen alumni: your Longevity Masterclass invitation<br><b>Preheader</b> (100): First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49.<br><b>Sender</b>: Noa Shalev, Campus Manager, Rosen School of Hebrew &lt;admissions@rosenhebrewschool.com&gt;<br><b>Button</b> “RESERVE MY SEAT” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=rosen_masterclass_blast&amp;utm_content=rosen-alumni-01#pricing</code><br><b>Hero</b> julie-zoom-host.jpg · 1200x700 · 109KB &nbsp;·&nbsp; <b>Words</b> 435 (body 235)</div>
-    </div>
+<section><h2>Rosen School of Hebrew</h2><article class="email" id="rosen-alumni-01">
+  <div class="side">
+    <h3>Alumni</h3>
+    <p class="sub">Rosen alumni: your Longevity Masterclass invitation</p>
+    <p class="from">Noa Shalev, Campus Manager, Rosen School of Hebrew &lt;admissions@rosenhebrewschool.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="rosen/rosen-alumni-01.html">Copy HTML</button>
-      <a class="btn dl" href="rosen/rosen-alumni-01.html" download="rosen-alumni-01.html">Download .html</a>
-      <a class="btn raw" href="rosen/rosen-alumni-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-zoom-host.jpg" download="rosen-alumni-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/rosen-alumni-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="rosen/rosen-alumni-01.html" download="rosen-alumni-01.html">Download HTML</a>
+      <button class="b copy" data-file="rosen/rosen-alumni-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/rosen-alumni-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-host.jpg" download="rosen-alumni-01-image.jpg">Download image</a>
+      <a class="b" href="rosen/rosen-alumni-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="rosen-alumni-01" data-src="rosen/rosen-alumni-01.html" loading="lazy" scrolling="no"></iframe>
 </article><article class="email" id="rosen-incomplete-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#A78BFA">ROSEN</span> <span class="msg">ROSEN-INCOMPLETE-01</span>
-      <div class="subject">ROSEN_Masterclass_Blast_Incomplete | students who enrolled and did not finish</div>
-      <div class="dest"><b>Subject</b> (53): Rosen students: your Longevity Masterclass invitation<br><b>Preheader</b> (100): First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49.<br><b>Sender</b>: Noa Shalev, Campus Manager, Rosen School of Hebrew &lt;admissions@rosenhebrewschool.com&gt;<br><b>Button</b> “RESERVE MY SEAT” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=rosen_masterclass_blast&amp;utm_content=rosen-incomplete-01#pricing</code><br><b>Hero</b> julie-portrait.jpg · 1200x700 · 98KB &nbsp;·&nbsp; <b>Words</b> 451 (body 251)</div>
-    </div>
+  <div class="side">
+    <h3>Students who did not finish</h3>
+    <p class="sub">Rosen students: your Longevity Masterclass invitation</p>
+    <p class="from">Noa Shalev, Campus Manager, Rosen School of Hebrew &lt;admissions@rosenhebrewschool.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="rosen/rosen-incomplete-01.html">Copy HTML</button>
-      <a class="btn dl" href="rosen/rosen-incomplete-01.html" download="rosen-incomplete-01.html">Download .html</a>
-      <a class="btn raw" href="rosen/rosen-incomplete-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-portrait.jpg" download="rosen-incomplete-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/rosen-incomplete-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="rosen/rosen-incomplete-01.html" download="rosen-incomplete-01.html">Download HTML</a>
+      <button class="b copy" data-file="rosen/rosen-incomplete-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/rosen-incomplete-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-portrait.jpg" download="rosen-incomplete-01-image.jpg">Download image</a>
+      <a class="b" href="rosen/rosen-incomplete-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="rosen-incomplete-01" data-src="rosen/rosen-incomplete-01.html" loading="lazy" scrolling="no"></iframe>
 </article><article class="email" id="rosen-leads-01">
-  <div class="meta"><div>
-      <span class="tier" style="--c:#A78BFA">ROSEN</span> <span class="msg">ROSEN-LEADS-01</span>
-      <div class="subject">ROSEN_Masterclass_Blast_Leads | leads (asked about enrolling, never enrolled)</div>
-      <div class="dest"><b>Subject</b> (49): From Rosen: your Longevity Masterclass invitation<br><b>Preheader</b> (100): First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49.<br><b>Sender</b>: Noa Shalev, Campus Manager, Rosen School of Hebrew &lt;admissions@rosenhebrewschool.com&gt;<br><b>Button</b> “RESERVE MY SEAT” → Julie page, pricing fold<br><code>https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=rosen_masterclass_blast&amp;utm_content=rosen-leads-01#pricing</code><br><b>Hero</b> julie-zoom-grid.jpg · 1200x700 · 104KB &nbsp;·&nbsp; <b>Words</b> 434 (body 238)</div>
-    </div>
+  <div class="side">
+    <h3>Leads</h3>
+    <p class="sub">From Rosen: your Longevity Masterclass invitation</p>
+    <p class="from">Noa Shalev, Campus Manager, Rosen School of Hebrew &lt;admissions@rosenhebrewschool.com&gt;</p>
     <div class="actions">
-      <button class="btn copy" data-file="rosen/rosen-leads-01.html">Copy HTML</button>
-      <a class="btn dl" href="rosen/rosen-leads-01.html" download="rosen-leads-01.html">Download .html</a>
-      <a class="btn raw" href="rosen/rosen-leads-01.html" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/julie-zoom-grid.jpg" download="rosen-leads-01-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="text/rosen-leads-01.txt">Copy text</button>
-    </div></div>
+      <a class="b primary" href="rosen/rosen-leads-01.html" download="rosen-leads-01.html">Download HTML</a>
+      <button class="b copy" data-file="rosen/rosen-leads-01.html">Copy HTML</button>
+      <button class="b copy" data-file="text/rosen-leads-01.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-grid.jpg" download="rosen-leads-01-image.jpg">Download image</a>
+      <a class="b" href="rosen/rosen-leads-01.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="rosen-leads-01" data-src="rosen/rosen-leads-01.html" loading="lazy" scrolling="no"></iframe>
 </article></section>
 </main>
 <script>
 (function(){
   function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\(\$FIRSTNAME\)%([\s\S]*?)%ELSE%[\s\S]*?%\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }
-  var frames=[].slice.call(document.querySelectorAll('iframe[data-src]'));
-  function fit(f){ try{ var d=f.contentDocument; if(d&&d.body){ var h=Math.max(d.documentElement.scrollHeight,d.body.scrollHeight); if(h>200) f.style.height=(h+20)+'px'; } }catch(e){} }
-  function load(f){ if(f.src) return; f.src=f.getAttribute('data-src'); f.addEventListener('load',function(){ acPreview(f); fit(f); setTimeout(function(){fit(f)},800); setTimeout(function(){fit(f)},2500); }); }
-  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ load(e.target); io.unobserve(e.target); } }); },{rootMargin:'900px'}); frames.forEach(function(f){io.observe(f)}); } else frames.forEach(load);
-  document.querySelectorAll('.btn.copy, .btn.copytext').forEach(function(b){
+  function fit(f){ try{ var h=f.contentDocument.documentElement.scrollHeight; if(h>300) f.style.height=(h+8)+'px'; }catch(e){} }
+  document.querySelectorAll('iframe[data-src]').forEach(function(f){ f.addEventListener('load',function(){ acPreview(f); fit(f); setTimeout(function(){fit(f)},800); }); f.src=f.getAttribute('data-src'); });
+  document.querySelectorAll('.b.copy').forEach(function(b){
     b.addEventListener('click',function(){
-      var file=b.getAttribute('data-file'); b.textContent='Copying…';
-      fetch(file,{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){
-        var lbl=b.textContent; function done(){ b.textContent='Copied ✓'; b.classList.add('ok'); setTimeout(function(){ b.textContent=lbl; b.classList.remove('ok'); },2500); }
-        if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done,function(){fallback(t);done();}); else { fallback(t); done(); }
-      }).catch(function(){ b.textContent='Copy failed, use Download'; });
+      var lbl=b.textContent;
+      fetch(b.getAttribute('data-file')).then(function(r){return r.text()}).then(function(t){
+        return navigator.clipboard.writeText(t);
+      }).then(function(){ b.textContent='Copied'; b.classList.add('ok'); setTimeout(function(){ b.textContent=lbl; b.classList.remove('ok'); },2000); })
+      .catch(function(){ window.open(b.getAttribute('data-file'),'_blank'); });
     });
   });
-  function fallback(t){ var ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); try{document.execCommand('copy')}catch(e){} document.body.removeChild(ta); }
 })();
 </script>
 </body></html>

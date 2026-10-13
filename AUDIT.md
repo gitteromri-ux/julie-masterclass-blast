@@ -2,25 +2,25 @@
 
 Reference: the approved masterclass set sent to Chris and Sandra (`lla-masterclass-emails-3tier/launch-email-for-chris`, 36 emails):
 640px card, header, 4px #5EB6FF divider, navy alert bar, 1200×700 hero, Georgia h1, 17px body, #5EB6FF pill button, details box, second button, signoff, dark footer;
-tokens %FIRSTNAME%, %UNSUBSCRIBELINK%, %UPDATELINK%; whole-file length 191 to 262 words, 1203 to 1534 characters.
+tokens %FIRSTNAME%, %UNSUBSCRIBELINK% (schools also %EMAIL%); whole-file length 191 to 262 words, 1203 to 1534 characters.
 
 ## Per email
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
-| lla-leads-01 | 54 | 91 | 409 | 2401 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
-| iibs-alumni-01 | 69 | 100 | 444 | 2704 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| iibs-incomplete-01 | 71 | 100 | 460 | 2798 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| iibs-leads-01 | 67 | 100 | 443 | 2692 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
-| rosen-alumni-01 | 51 | 100 | 435 | 2594 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| rosen-incomplete-01 | 53 | 100 | 451 | 2688 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| rosen-leads-01 | 49 | 100 | 434 | 2592 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| lla-leads-01 | 54 | 90 | 429 | 2450 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
+| iibs-alumni-01 | 69 | 104 | 475 | 2821 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| iibs-incomplete-01 | 71 | 104 | 494 | 2914 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| iibs-leads-01 | 67 | 104 | 469 | 2768 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| rosen-alumni-01 | 51 | 104 | 465 | 2697 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| rosen-incomplete-01 | 53 | 104 | 484 | 2790 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| rosen-leads-01 | 49 | 104 | 462 | 2676 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
 
-Word count vs the approved set: these are cold invitations with a who-is-Julie paragraph and three bullets that the lifecycle emails did not need; Omri allowed "a little more". All seven are within +198 words of the set's longest email.
+Word count vs the approved set: these are cold invitations written as a letter from the school's advisor, with the longevity paragraph, the Julie paragraph and three bullets that the lifecycle emails did not need. Longest is 494 words whole file.
 
 ## Format checks
-- Header: LLA = navy header with the LLA logo (approved). Schools = white header, school logo (84px tall) left, "A school of" + eTeacher Group logo (30px) right. Two logos, not three.
+- Header: LLA = navy header with the LLA logo (approved). Schools = white header with the school's own logo lockup (which carries "By eTeacher"). No other logo anywhere in the email.
 - Divider, alert bar, hero, h1, body, pill button, details box, second button, signoff, small line, footer: present in all 7 (column "Approved anatomy").
-- Footer: LLA = approved dark footer with LLA logo and tagline. Schools = dark footer, eTeacher Group logo, "© 2026 <school> by eTeacher Group. All Rights Reserved.", Unsubscribe, Update preferences, Privacy, "8 Aholiav St, 5252261 Ramat Gan, Israel" (the address printed in the real IIBS and Rosen campaigns).
+- Footer: LLA = approved dark footer with LLA logo and tagline. Schools = the exact footer of their real campaigns (Rosen sends of Sep 2026 in Omri's inbox): "© 2026 <school> by eTeacher Group / All Rights Reserved." / "Sent to: %EMAIL%" / "Unsubscribe" / "All Rights Reserved. The <school> by eTeacher Group, 8 Aholiav St, 5252261 Ramat Gan, Israel".
 - Greeting: schools "Shalom %FIRSTNAME%," as in their real campaigns; LLA "Hi %FIRSTNAME%," as in the approved set (jm-a1-1). Blank first name renders "Shalom," / "Hi," via ActiveCampaign conditional content.
 - Buttons: schools CAPS ("RESERVE MY SEAT") as in their real campaigns; LLA sentence case ("Reserve My Seat") as in the approved set. All 14 buttons → `https://www.longevitylifeacademy.com/julie-masterclass/#pricing` with utm_source=activecampaign, utm_medium=email, utm_campaign, utm_content.
 - Images: approved lifecycle Zoom assets only, 1200×700 JPG (2× of the 600px slot), 98 to 117KB each, hosted on this Pages site. Logos:
@@ -29,7 +29,7 @@ Word count vs the approved set: these are cold invitations with a who-is-Julie p
 - `assets/rosen-logo.png`: 630×296, 28KB
 - `assets/eteacher-group-logo.png`: 228×44, 6KB
 - `assets/eteacher-group-logo-white.png`: 228×44, 5KB
-- Copy: no em or en dashes, no exclamation marks, no hype words (unlock, elevate, journey, seamless, empower, transform, game-changer, hurry, act now, don't miss out), no invented numbers. "The Longevity Masterclass of the Year", "second slowest-aging human ever measured", "eight months for every year", "$100 a month", the three bullets, the two dates, $49, $79, the $249 promo code and the 14-day refund are the live page's own facts.
+- Copy: letter form in the voice of the school's real campaigns ("Shalom", short paragraphs, one CAPS button, "Warmly," + name, title, school). Longevity language taken from longevitylifeacademy.com ("a simple belief, that everyone deserves a science-backed protocol for a longer, healthier life", nutrition, sleep, movement, stress, "the decades ahead"). No em or en dashes, no exclamation marks, no hype words, no emojis, no invented numbers. "The Longevity Masterclass of the Year", "ten years pass, she ages six", No. 2 Rejuvenation Olympics, "$100 a month", the three bullets, the two dates, $49, $79, the $249 promo code and the 14-day refund are the live page's own facts.
 
 ## Segment coverage
 | Funnel | Use case | Email | Why the reader is getting it (first paragraph) |

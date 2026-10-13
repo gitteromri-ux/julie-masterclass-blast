@@ -19,84 +19,87 @@ def hi(): return "%IF !empty($FIRSTNAME)%Hi %FIRSTNAME%,%ELSE%Hi,%/IF%"
 BRANDS = {
     "lla": dict(name="Longevity Life Academy", logo=None, sender="Emma | Longevity Advisor <advisor@longevitylifeacademy.com>",
                 button="Reserve My Seat", alert_k="Live on Zoom", alert_v="October 27 or November 14, 7:00 PM ET / 1:00 PM ET",
-                sign="To your longest, strongest life,<br><b>The Longevity Life Academy team</b>",
+                sign="To your longest, strongest life,<br><b>Emma</b><br>Longevity Advisor, Longevity Life Academy",
                 footer_tag="It&rsquo;s Your Life. Live It Well. Powered by eTeacher Group.", footer_reason="You received this because you asked about Longevity Life Academy", footer_addr=""),
     "iibs": dict(name="Israel Institute of Biblical Studies", short="Israel Biblical Studies", logo="iibs-logo.png",
                  sender="Sophia Green, Israel Biblical Studies <SophiaG@israelbiblicalstudies.com>", button="RESERVE MY SEAT",
                  alert_k="First access for our students", alert_v="The Longevity Masterclass of the Year",
-                 sign="Warmly,<br><b>Sophia Green</b><br>Admissions Advisor, Israel Institute of Biblical Studies",
-                 footer_tag="&copy; 2026 Israel Institute of Biblical Studies by eTeacher Group. All Rights Reserved.",
-                 footer_reason="Sent to you as a student or contact of the Israel Institute of Biblical Studies", footer_addr=ADDRESS,
+                 sign="Warmly,<br><b>Sophia Green</b><br>Admissions Advisor<br>Israel Institute of Biblical Studies",
+                 footer_tag="&copy; 2026 Israel Institute of Biblical Studies by eTeacher Group<br>All Rights Reserved.",
+                 footer_addr="All Rights Reserved. The Israel Institute of Biblical Studies by eTeacher Group, "+ADDRESS,
                  course="course", enrol="enrolling at the Israel Institute of Biblical Studies"),
     "rosen": dict(name="Rosen School of Hebrew", short="Rosen", logo="rosen-logo.png",
                   sender="Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com>", button="RESERVE MY SEAT",
                   alert_k="First access for our students", alert_v="The Longevity Masterclass of the Year",
-                  sign="Warmly,<br><b>Noa Shalev</b><br>Campus Manager, Rosen School of Hebrew",
-                  footer_tag="&copy; 2026 Rosen School of Hebrew by eTeacher Group. All Rights Reserved.",
-                  footer_reason="Sent to you as a student or contact of Rosen School of Hebrew", footer_addr=ADDRESS,
+                  sign="Warmly,<br><b>Noa Shalev</b><br>Campus Manager<br>Rosen School of Hebrew",
+                  footer_tag="&copy; 2026 Rosen School of Hebrew by eTeacher Group<br>All Rights Reserved.",
+                  footer_addr="All Rights Reserved. The Rosen School of Hebrew by eTeacher Group, "+ADDRESS,
                   course="Hebrew course", enrol="enrolling at Rosen School of Hebrew"),
 }
 
-# ---------- copy (facts: live masterclass page, 13 Oct 2026) ----------
-def hosted(b):
-    return ('<table role="presentation" class="hosted" align="center"><tr>'
-            f'<td><img src="{BASE}/assets/eteacher-group-logo.png" alt="eTeacher Group" style="height:22px;width:auto;display:block"></td>'
-            '<td class="x">&times;</td>'
-            f'<td><img src="{BASE}/assets/lla-logo-dark.png" alt="Longevity Life Academy" style="height:40px;width:auto;display:block"></td>'
-            '</tr></table><p class="hosted-cap">Hosted by Longevity Life Academy, an eTeacher Group school</p>')
-def longevity(b):
-    reason = ("That is why eTeacher Group opened Longevity Life Academy this year, and why we want our own students to have this first."
-              if b != "lla" else "That is why we opened Longevity Life Academy this year, and why you hear about this first.")
-    return ("<h2>Why longevity, and why now</h2>"
-            "<p>Aging can now be measured, slowed and in part reversed, and the years we live in full health depend on sleep, food, movement "
-            f"and daily habits far more than most people assume. The decades ahead can be the best ones. {reason}</p>")
-def event(b):
-    return ("<h2>The Longevity Masterclass of the Year</h2>"
-            "<p><strong>October 27</strong> (or <strong>November 14</strong>), 60 minutes live on Zoom with <strong>Julie Gibson Clark</strong>, "
-            "the <strong>second slowest-aging human ever measured</strong>. She ages <strong>six years in a decade</strong>, ranks No. 2 in the world on the "
-            "Rejuvenation Olympics leaderboard ahead of Bryan Johnson&rsquo;s two-million-dollar program, and does it on about $100 a month. "
-            "Fortune, Business Insider and the Daily Mail have all covered her.</p>")
-LEARN = ("<h2>What you will learn in the hour</h2>"
-         "<ul><li>How biological aging is measured, and what actually moves the number</li>"
-         "<li>Her rules for food, sleep and movement, with the numbers behind each</li>"
-         "<li>Her full day, 5:00 am to 9:00 pm, including the four supplements she keeps</li></ul>")
-def access(who):
-    return (f"<p>Seats are held for {who} for <strong>72 hours</strong>. Seats start at <strong>$49</strong>; your access details are below.</p>")
+# ---------- copy (facts: live masterclass page, 13 Oct 2026; language: longevitylifeacademy.com) ----------
+def school_body(b, seg):
+    B = BRANDS[b]; name = B["name"]
+    open_ = {
+        "alumni": f"<p>I am writing with an invitation of a different kind. As a graduate of {name}, you are part of the eTeacher Group family of students, and this reaches you before it opens to anyone else.</p>",
+        "incomplete": f"<p>I am writing with an invitation of a different kind. As a student of {name}, you are part of the eTeacher Group family of students, and this reaches you before it opens to anyone else. There is nothing to catch up on. It is one live hour, and you only need to show up.</p>",
+        "leads": f"<p>I am writing with an invitation of a different kind. You asked about studying at {name}, and that places you in the eTeacher Group family of students, so this reaches you before it opens to anyone else.</p>",
+    }[seg]
+    who = {"alumni": f"{B['short']} alumni", "incomplete": f"{B['short']} students", "leads": "you"}[seg]
+    return [f"<p>{shalom()}</p>", open_,
+        "<p>This year eTeacher Group opened a new school, <strong>Longevity Life Academy</strong>. It was built on a simple belief: that everyone deserves a science-backed protocol for a longer, healthier life. "
+        "Aging is no longer something that simply happens to us. It can be measured, it can be slowed, and the daily choices around nutrition, sleep, movement and stress decide how many of the decades ahead we live in full health. "
+        "We wanted our own students to have this first.</p>",
+        "<p>On <strong>October 27</strong>, the Academy is hosting <strong>The Longevity Masterclass of the Year</strong>, and I would like to give you a seat.</p>",
+        "<p>The teacher is <strong>Julie Gibson Clark</strong>. She is 56, a working single mother from Phoenix, and by verified testing she is the second slowest-aging person in the world: ten years pass, and she ages six. "
+        "On the Rejuvenation Olympics leaderboard she ranks No. 2, ahead of Bryan Johnson and his two-million-dollar program, on a routine that costs her about $100 a month. "
+        "For 60 minutes, live on Zoom, she will walk through exactly how she does it:</p>",
+        "<ul><li>How biological aging is measured, and what actually moves the number</li>"
+        "<li>Her rules for food, sleep and movement, with the numbers behind each</li>"
+        "<li>Her full day, from 5:00 am to 9:00 pm, including the four supplements she keeps</li></ul>",
+        f"<p>Seats are held for {who} for the next <strong>72 hours</strong>, before general release. Seats start at <strong>$49</strong>. "
+        "The VIP seat, at $79, adds a private 30-minute Q&amp;A with Julie and includes an exclusive <strong>$249 promo code</strong> toward her full course.</p>"]
 
-WHY = {
-    "alumni": "<p>As a graduate of {name}, you are part of the eTeacher Group community, so this invitation reaches you first.</p>",
-    "incomplete": "<p>As a student of {name}, you are part of the eTeacher Group community, so this invitation reaches you first. It is one live hour, with nothing to prepare and nothing to keep up with afterwards.</p>",
-    "leads": "<p>You asked about {enrol}, which makes you part of the eTeacher Group community, so this invitation reaches you first.</p>",
-}
+LLA_BODY = [f"<p>{hi()}</p>",
+    "<p>You asked about Longevity Life Academy this year, so I wanted you to hear this from me before anyone else.</p>",
+    "<p>On <strong>October 27</strong> we are hosting <strong>The Longevity Masterclass of the Year</strong>, and I would like to give you a seat.</p>",
+    "<p>The Academy was built on a simple belief: that everyone deserves a science-backed protocol for a longer, healthier life. "
+    "Aging is no longer something that simply happens to us. It can be measured, it can be slowed, and the daily choices around nutrition, sleep, movement and stress decide how many of the decades ahead we live in full health. "
+    "This hour is the clearest place to start.</p>",
+    "<p>The teacher is <strong>Julie Gibson Clark</strong>. She is 56, a working single mother from Phoenix, and by verified testing she is the second slowest-aging person in the world: ten years pass, and she ages six. "
+    "On the Rejuvenation Olympics leaderboard she ranks No. 2, ahead of Bryan Johnson and his two-million-dollar program, on a routine that costs her about $100 a month. "
+    "For 60 minutes, live on Zoom, she will walk through exactly how she does it:</p>",
+    "<ul><li>How biological aging is measured, and what actually moves the number</li>"
+    "<li>Her rules for food, sleep and movement, with the numbers behind each</li>"
+    "<li>Her full day, from 5:00 am to 9:00 pm, including the four supplements she keeps</li></ul>",
+    "<p>Your seat is held for the next <strong>72 hours</strong>, before general release. Seats start at <strong>$49</strong>. "
+    "The VIP seat, at $79, adds a private 30-minute Q&amp;A with Julie and includes an exclusive <strong>$249 promo code</strong> toward her full course.</p>"]
+
 SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
         "incomplete": "{short} students: your Longevity Masterclass invitation",
         "leads": "From {short}: your Longevity Masterclass invitation"}
 H1 = {"alumni": "{name} alumni are invited to <em>The Longevity Masterclass of the Year</em>",
       "incomplete": "{name} students are invited to <em>The Longevity Masterclass of the Year</em>",
       "leads": "You are invited to <em>The Longevity Masterclass of the Year</em>"}
-PRE = "First access for eTeacher students: 60 minutes live on Zoom with Julie Gibson Clark. Seats from $49."
+PRE = "A benefit for our students: first access and a VIP promo code for Julie Gibson Clark's live masterclass."
 HERO = {"alumni": "julie-zoom-host.jpg", "incomplete": "julie-portrait.jpg", "leads": "julie-zoom-grid.jpg"}
-WHO = {"alumni": "eTeacher Group alumni", "incomplete": "eTeacher Group students", "leads": "the eTeacher Group community"}
 
 EMAILS = [dict(
     brand="lla", id="lla-leads-01", segment="LLA leads, last 3 to 4 months, not enrolled", ac="LGV_Masterclass_Blast_Leads", campaign="lgv_masterclass_blast_leads",
-    subject="Your invitation: The Longevity Masterclass of the Year", preheader="60 minutes live on Zoom with Julie Gibson Clark. Seats held for you for 72 hours. From $49.",
-    h1="You are invited to <em>The Longevity Masterclass of the Year</em>", hero="julie-zoom-room.jpg",
-    body=[f"<p>{hi()}</p>", "<p>You asked about enrolling in Longevity Life Academy this year, so this invitation reaches you first.</p>",
-          longevity("lla"), event("lla"), LEARN, access("the people on this list")])]
+    subject="Your invitation: The Longevity Masterclass of the Year", preheader="60 minutes live on Zoom with Julie Gibson Clark. Your seat is held for 72 hours. From $49.",
+    h1="You are invited to <em>The Longevity Masterclass of the Year</em>", hero="julie-zoom-room.jpg", body=LLA_BODY)]
 for b in ("iibs", "rosen"):
     B = BRANDS[b]
     for seg in ("alumni", "incomplete", "leads"):
         EMAILS.append(dict(brand=b, id=f"{b}-{seg}-01",
             segment={"alumni": "alumni (completed a course)", "incomplete": "students who enrolled and did not finish", "leads": "leads (asked about enrolling, never enrolled)"}[seg],
             ac=f"{b.upper()}_Masterclass_Blast_{seg.capitalize()}", campaign=f"{b}_masterclass_blast",
-            subject=SUBJ[seg].format(short=B["short"]), preheader=PRE, h1=H1[seg].format(name=B["name"]), hero=HERO[seg],
-            body=[f"<p>{shalom()}</p>", WHY[seg].format(name=B["name"], enrol=B["enrol"]), hosted(b), longevity(b), event(b), LEARN, access(WHO[seg])]))
+            subject=SUBJ[seg].format(short=B["short"]), preheader=PRE, h1=H1[seg].format(name=B["name"]), hero=HERO[seg], body=school_body(b, seg)))
 
-DETAILS = [("First access", "Seats held for eTeacher students for 72 hours"),
-           ("Dates", "Tue, October 27, 7:00 PM ET<br>Sat, November 14, 1:00 PM ET, live on Zoom"),
-           ("Seats", "From $49"),
-           ("VIP seat", "$79. Private 30-minute Q&amp;A with Julie, plus your <b>$249 promo code</b> toward her full course, The Longevity Blueprint"),
+DETAILS = [("Dates", "Tuesday, October 27, 7:00 PM ET<br>Saturday, November 14, 1:00 PM ET"),
+           ("Format", "60 minutes, live on Zoom"),
+           ("Seats", "From $49, held for you for 72 hours"),
+           ("VIP seat", "$79, with a private 30-minute Q&amp;A and your <b>$249 promo code</b>"),
            ("Refund", "14 days, both seats")]
 
 # ---------- the approved shell ----------
@@ -116,24 +119,20 @@ CSS = """
   .alert{background:#0A1E3F;padding:18px 24px;text-align:center;color:#fff;font-size:14px}
   .alert b{color:#5EB6FF;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-right:10px}
   .hero-img{width:100%;display:block}
-  .body-inner{padding:44px 40px 40px}
-  h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:32px;line-height:1.25;color:#0A1220;margin:0 0 26px}
+  .body-inner{padding:40px 44px 40px;text-align:left}
+  h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:30px;line-height:1.25;color:#0A1220;margin:0 0 24px;text-align:center}
   h1 em{font-style:italic;color:#2E6FB8}
   p{font-size:17px;line-height:1.65;color:#2a3244;margin:0 0 18px}
   p strong{color:#0A1220;font-weight:700}
   h2{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:21px;line-height:1.3;color:#0A1220;margin:28px 0 10px}
-  .hosted{margin:6px auto 2px;border-collapse:collapse}
-  .hosted td{vertical-align:middle;padding:0 10px}
-  .hosted td.x{font-size:18px;color:#7A8497;padding:0 4px}
-  .hosted-cap{font-size:13px;color:#7A8497;margin:6px 0 10px}
   .details td.v b{color:#0A1220;font-weight:700}
   ul{margin:0 0 18px;padding-left:22px;text-align:left}
   li{font-size:17px;line-height:1.6;color:#2a3244;margin:0 0 8px}
   .details{background:#F5F0E5;border-radius:8px;padding:24px 28px;margin:26px 0}
-  .details .dh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2E6FB8;margin:0 0 12px}
+  .details .dh{font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;color:#0A1220;margin:0 0 10px}
   .details table{width:100%;border-collapse:collapse}
   .details td{padding:10px 0;font-size:15px;vertical-align:top}
-  .details td.k{color:#7A8497;text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:600;width:42%}
+  .details td.k{color:#56627A;font-size:15px;font-weight:600;width:30%;padding-right:12px}
   .details td.v{color:#0A1220}
   .btn-row{text-align:center;padding:24px 0 8px}
   .btn{display:inline-block;background:#5EB6FF;color:#0A1220 !important;text-decoration:none;font-weight:700;font-size:16px;padding:16px 40px;border-radius:999px}
@@ -149,7 +148,7 @@ CSS = """
   .footer .fine{font-size:11px;line-height:1.5;color:#8494B4;padding:0 20px}
   .footer .fine a{color:#8494B4;text-decoration:underline}
   .sfooter{background:#F3F5F9;padding:24px 28px 22px;text-align:center;border-top:1px solid #E3E8F0}
-  .sfooter p{font-size:12px;line-height:1.7;color:#56627A;margin:0}
+  .sfooter p{font-size:12px;line-height:1.7;color:#56627A;margin:0 0 8px}
   .sfooter a{color:#56627A;text-decoration:underline}
   @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.top-white img.school{height:56px}.top-white img.etg{height:22px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
 """
@@ -161,8 +160,7 @@ def footer(b):
     if not b["logo"]:
         return (f'<div class="footer">\n    <img src="{BASE}/assets/lla-logo-800w.png" alt="Longevity Life Academy">\n    <p class="tag">{b["footer_tag"]}</p>\n    <hr>\n'
                 f'    <p class="fine">{b["footer_reason"]} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a></p>\n  </div>')
-    return (f'<div class="sfooter">\n    <p>{b["footer_tag"]}<br>{b["footer_addr"]}</p>\n'
-            f'    <p>{b["footer_reason"]} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a></p>\n  </div>')
+    return (f'<div class="sfooter">\n    <p>{b["footer_tag"]}</p>\n    <p>Sent to: %EMAIL%</p>\n    <p><a href="%UNSUBSCRIBELINK%">Unsubscribe</a></p>\n    <p>{b["footer_addr"]}</p>\n  </div>')
 
 def render(e):
     b = BRANDS[e["brand"]]; href = cta(e["campaign"], e["id"]); body = "\n".join("    " + x for x in e["body"])
@@ -183,7 +181,7 @@ def render(e):
   <div class="body-inner">
     <h1>{e['h1']}</h1>
 {body}
-    <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a><p class="btn-meta">Pick your date at checkout. 14-day full refund, both seats.</p></div>
+    <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a><p class="btn-meta">Choose your date at checkout. 14-day full refund on both seats.</p></div>
     <div class="details">
       <p class="dh">Your student access</p>
       <table role="presentation">
@@ -192,7 +190,6 @@ def render(e):
     </div>
     <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a></div>
     <div class="signoff">{b['sign']}</div>
-    <p class="small">Julie&rsquo;s pace-of-aging result (DunedinPACE 0.665) is her publicly reported, verified result. The masterclass is taught by Longevity Life Academy, an eTeacher Group school.</p>
   </div>
   {footer(b)}
 </div>
@@ -209,7 +206,6 @@ def plain(e):
     for x in e["body"]:
         x = x.replace("%IF !empty($FIRSTNAME)%", "").replace("%ELSE%Shalom,%/IF%", "").replace("%ELSE%Hi,%/IF%", "")
         x = x.replace("<h2>", "\n## ").replace("</h2>", " |BR| ")
-        if 'class="hosted"' in x: x = "[eTeacher Group logo × Longevity Life Academy logo] Hosted by Longevity Life Academy, an eTeacher Group school"
         if "<li>" in x:
             lead = visible(x.split("<ul>")[0]).replace(" |BR|", "").strip(); items = re.findall(r"<li>(.*?)</li>", x)
             parts.append(lead); parts += ["- " + visible(i) for i in items]
@@ -232,55 +228,81 @@ for e in EMAILS:
                          file=path, text=f"text/{e['id']}.txt", hero=e["hero"], hero_size=f"{im.size[0]}x{im.size[1]}", hero_kb=os.path.getsize(f"assets/images/{e['hero']}")//1024,
                          words=len(v.split()), chars=len(v), body_words=len(visible(" ".join(e["body"])).split()),
                          emdash=out.count("\u2014") + out.count("\u2013"), bangs=len(re.findall(r"[A-Za-z0-9]!(?!important|empty|\[)", re.sub(r"<style.*?</style>", "", out, flags=re.S))),
-                         tokens=all(t in out for t in ("%FIRSTNAME%", "%UNSUBSCRIBELINK%", "%UPDATELINK%")),
+                         tokens=all(t in out for t in ("%FIRSTNAME%", "%UNSUBSCRIBELINK%")),
                          anatomy=all(k in out for k in ('class="divider"', 'class="alert"', 'class="hero-img"', "<h1>", 'class="btn"', 'class="details"', 'class="signoff"', 'footer"'))))
 json.dump(manifest, open("manifest.json", "w"), indent=2)
 for m in manifest: print(m["id"], "| subj", m["subject_len"], "| pre", m["preheader_len"], "| body", m["body_words"], "| whole", m["words"], "| chars", m["chars"], "| dash", m["emdash"], "| !", m["bangs"])
 
-# ---------- gallery (Chris format: Copy HTML / Download .html / Open + image download + copy text) ----------
-src = open('/home/user/workspace/gallery-src.html', encoding='utf-8').read()
-css = src[src.index('<style>'):src.index('</style>')+8]
-script = src[src.index('<script>'):src.index('</script>')+9]
-script = script.replace("f.addEventListener('load',function(){ fit(f);", "f.addEventListener('load',function(){ acPreview(f); fit(f);")
-script = script.replace("(function(){", "(function(){\n  function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\\(\\$FIRSTNAME\\)%([\\s\\S]*?)%ELSE%[\\s\\S]*?%\\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }", 1)
-script = script.replace("document.querySelectorAll('.btn.copy').forEach", "document.querySelectorAll('.btn.copy, .btn.copytext').forEach")
-script = script.replace("function done(){ b.textContent='Copied ✓'; b.classList.add('ok'); setTimeout(function(){ b.textContent='Copy HTML'; b.classList.remove('ok'); },2500); }",
-                        "var lbl=b.textContent; function done(){ b.textContent='Copied ✓'; b.classList.add('ok'); setTimeout(function(){ b.textContent=lbl; b.classList.remove('ok'); },2500); }")
-COL = {"lla": "#5EB6FF", "iibs": "#F5C451", "rosen": "#A78BFA"}
-GROUPS = [("lla", "Funnel 1 · Longevity Life Academy", "LLA leads from the last 3 to 4 months who did not enrol in the Blueprint. Sender: Emma | Longevity Advisor &lt;advisor@longevitylifeacademy.com&gt;.", "1 email"),
-          ("iibs", "Funnel 2 · Israel Institute of Biblical Studies", "Three use cases: alumni, enrolled and did not finish, leads. Sender: Sophia Green, Israel Biblical Studies &lt;SophiaG@israelbiblicalstudies.com&gt;.", "3 emails"),
-          ("rosen", "Funnel 3 · Rosen School of Hebrew", "Three use cases: alumni, enrolled and did not finish, leads. Sender: Noa Shalev, Campus Manager &lt;admissions@rosenhebrewschool.com&gt;.", "3 emails")]
+# ---------- gallery ----------
+SEGNAME = {"alumni": "Alumni", "incomplete": "Students who did not finish", "leads": "Leads"}
+GROUPS = [("lla", "Longevity Life Academy"), ("iibs", "Israel Institute of Biblical Studies"), ("rosen", "Rosen School of Hebrew")]
 def card(m):
+    seg = m["id"].split("-")[1]; title = SEGNAME.get(seg, seg.title())
     return f"""<article class="email" id="{m['id']}">
-  <div class="meta"><div>
-      <span class="tier" style="--c:{COL[m['brand']]}">{m['brand'].upper()}</span> <span class="msg">{m['id'].upper()}</span>
-      <div class="subject">{m['ac']} | {m['segment']}</div>
-      <div class="dest"><b>Subject</b> ({m['subject_len']}): {html.escape(m['subject'])}<br><b>Preheader</b> ({m['preheader_len']}): {html.escape(m['preheader'])}<br><b>Sender</b>: {html.escape(m['sender'])}<br><b>Button</b> “{m['button']}” → Julie page, pricing fold<br><code>{html.escape(m['cta'])}</code><br><b>Hero</b> {m['hero']} · {m['hero_size']} · {m['hero_kb']}KB &nbsp;·&nbsp; <b>Words</b> {m['words']} (body {m['body_words']})</div>
-    </div>
+  <div class="side">
+    <h3>{title}</h3>
+    <p class="sub">{html.escape(m['subject'])}</p>
+    <p class="from">{html.escape(m['sender'])}</p>
     <div class="actions">
-      <button class="btn copy" data-file="{m['file']}">Copy HTML</button>
-      <a class="btn dl" href="{m['file']}" download="{m['id']}.html">Download .html</a>
-      <a class="btn raw" href="{m['file']}" target="_blank" rel="noopener">Open</a>
-      <a class="btn dl" href="assets/images/{m['hero']}" download="{m['id']}-hero.jpg">Download image</a>
-      <button class="btn copytext" data-file="{m['text']}">Copy text</button>
-    </div></div>
+      <a class="b primary" href="{m['file']}" download="{m['id']}.html">Download HTML</a>
+      <button class="b copy" data-file="{m['file']}">Copy HTML</button>
+      <button class="b copy" data-file="{m['text']}">Copy text</button>
+      <a class="b" href="assets/images/{m['hero']}" download="{m['id']}-image.jpg">Download image</a>
+      <a class="b" href="{m['file']}" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
   <iframe title="{m['id']}" data-src="{m['file']}" loading="lazy" scrolling="no"></iframe>
 </article>"""
-toc = "".join(f'<a href="#{m["id"]}">{m["id"].upper()} <small>{m["brand"].upper()}</small></a>' for m in manifest)
-sections = "".join(f'<section class="funnel"><h2>{name} <span class="count" style="background:{COL[k]}">{cnt}</span></h2><p class="fdesc">{desc}</p>{"".join(card(m) for m in manifest if m["brand"] == k)}</section>\n' for k, name, desc, cnt in GROUPS)
+sections = "".join(f'<section><h2>{name}</h2>{"".join(card(m) for m in manifest if m["brand"] == k)}</section>\n' for k, name in GROUPS)
+GCSS = """<style>
+  :root{--bg:#F5F5F7;--ink:#1D1D1F;--mute:#6E6E73;--line:#E5E5EA;--blue:#0071E3}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  header{max-width:1180px;margin:0 auto;padding:72px 32px 24px}
+  h1{font-size:56px;line-height:1.07;letter-spacing:-.02em;margin:0 0 14px;font-weight:700}
+  header p{font-size:21px;line-height:1.4;color:var(--mute);margin:0}
+  main{max-width:1180px;margin:0 auto;padding:0 32px 96px}
+  section{margin-top:56px}
+  h2{font-size:40px;line-height:1.1;letter-spacing:-.015em;margin:0 0 24px;font-weight:700}
+  .email{display:grid;grid-template-columns:360px 1fr;gap:32px;background:#fff;border-radius:24px;padding:32px;margin-bottom:24px;border:1px solid var(--line)}
+  .side h3{font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 12px;font-weight:700}
+  .side .sub{font-size:17px;line-height:1.45;margin:0 0 6px;color:var(--ink)}
+  .side .from{font-size:15px;line-height:1.45;margin:0 0 24px;color:var(--mute)}
+  .actions{display:flex;flex-direction:column;gap:10px}
+  .b{display:block;width:100%;text-align:center;font:inherit;font-size:17px;font-weight:600;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+  .b:hover{background:#F5F5F7}
+  .b.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .b.primary:hover{background:#0077ED}
+  .b.ok{background:#1D1D1F;border-color:#1D1D1F;color:#fff}
+  iframe{width:100%;border:1px solid var(--line);border-radius:16px;background:#F5F0E5;display:block;min-height:900px}
+  @media(max-width:900px){.email{grid-template-columns:1fr}h1{font-size:40px}h2{font-size:32px}header{padding:48px 20px 16px}main{padding:0 20px 64px}}
+</style>"""
+GJS = """<script>
+(function(){
+  function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\\(\\$FIRSTNAME\\)%([\\s\\S]*?)%ELSE%[\\s\\S]*?%\\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }
+  function fit(f){ try{ var h=f.contentDocument.documentElement.scrollHeight; if(h>300) f.style.height=(h+8)+'px'; }catch(e){} }
+  document.querySelectorAll('iframe[data-src]').forEach(function(f){ f.addEventListener('load',function(){ acPreview(f); fit(f); setTimeout(function(){fit(f)},800); }); f.src=f.getAttribute('data-src'); });
+  document.querySelectorAll('.b.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var lbl=b.textContent;
+      fetch(b.getAttribute('data-file')).then(function(r){return r.text()}).then(function(t){
+        return navigator.clipboard.writeText(t);
+      }).then(function(){ b.textContent='Copied'; b.classList.add('ok'); setTimeout(function(){ b.textContent=lbl; b.classList.remove('ok'); },2000); })
+      .catch(function(){ window.open(b.getAttribute('data-file'),'_blank'); });
+    });
+  });
+})();
+</script>"""
 open("index.html", "w", encoding="utf-8").write(f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Julie Masterclass blast · 3 funnels · 7 install-ready emails · 14 Oct 2026</title>
-{css}</head><body>
+<title>Julie Masterclass invitation emails</title>
+{GCSS}</head><body>
 <header>
-  <h1>Julie Masterclass blast for Chris &amp; Sandra <span class="count">3 funnels · 7 emails</span></h1>
-  <p>Install-ready HTML for ActiveCampaign one-time campaigns. Same anatomy as the approved masterclass set (640px card, header, divider, alert bar, 1200×700 hero, Georgia h1, 17px body, pill button, details box, second button, signoff, dark footer; tokens %FIRSTNAME% with ActiveCampaign's blank-name fallback, %UNSUBSCRIBELINK%, %UPDATELINK%). School sends carry the school logo and the eTeacher Group logo in the header and the school's “by eTeacher Group” copyright and Ramat Gan address in the footer. Facts from the live Julie page: Tue 27 Oct 7:00 PM ET or Sat 14 Nov 1:00 PM ET, seats from $49, VIP $79 with private 30-min Q&amp;A and the $249 Blueprint promo code, 14-day full refund.</p>
-  <p>Per email: <b>Copy HTML</b> (production HTML to clipboard) · <b>Download .html</b> · <b>Open</b> · <b>Download image</b> (the hero, 1200×700 JPG) · <b>Copy text</b> (subject, preheader, body as plain text). Also: <a href="AUDIT.md">AUDIT.md</a> and <a href="README.md">README.md</a>.</p>
+  <h1>Julie Masterclass invitation emails</h1>
+  <p>Seven emails for three schools. Download the HTML, or copy it straight into ActiveCampaign.</p>
 </header>
-<nav class="toc">{toc}</nav>
 <main>
 {sections}</main>
-{script}
+{GJS}
 </body></html>
 """)
 
@@ -292,24 +314,24 @@ open("AUDIT.md", "w", encoding="utf-8").write(f"""# Audit · Julie Masterclass b
 
 Reference: the approved masterclass set sent to Chris and Sandra (`lla-masterclass-emails-3tier/launch-email-for-chris`, 36 emails):
 640px card, header, 4px #5EB6FF divider, navy alert bar, 1200×700 hero, Georgia h1, 17px body, #5EB6FF pill button, details box, second button, signoff, dark footer;
-tokens %FIRSTNAME%, %UNSUBSCRIBELINK%, %UPDATELINK%; whole-file length {ref_w[0]} to {ref_w[1]} words, {ref_c[0]} to {ref_c[1]} characters.
+tokens %FIRSTNAME%, %UNSUBSCRIBELINK% (schools also %EMAIL%); whole-file length {ref_w[0]} to {ref_w[1]} words, {ref_c[0]} to {ref_c[1]} characters.
 
 ## Per email
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
 {rows}
 
-Word count vs the approved set: these are cold invitations with a who-is-Julie paragraph and three bullets that the lifecycle emails did not need; Omri allowed "a little more". All seven are within +{max(m['words'] for m in manifest) - ref_w[1]} words of the set's longest email.
+Word count vs the approved set: these are cold invitations written as a letter from the school's advisor, with the longevity paragraph, the Julie paragraph and three bullets that the lifecycle emails did not need. Longest is {max(m['words'] for m in manifest)} words whole file.
 
 ## Format checks
-- Header: LLA = navy header with the LLA logo (approved). Schools = white header, school logo (84px tall) left, "A school of" + eTeacher Group logo (30px) right. Two logos, not three.
+- Header: LLA = navy header with the LLA logo (approved). Schools = white header with the school's own logo lockup (which carries "By eTeacher"). No other logo anywhere in the email.
 - Divider, alert bar, hero, h1, body, pill button, details box, second button, signoff, small line, footer: present in all 7 (column "Approved anatomy").
-- Footer: LLA = approved dark footer with LLA logo and tagline. Schools = dark footer, eTeacher Group logo, "© 2026 <school> by eTeacher Group. All Rights Reserved.", Unsubscribe, Update preferences, Privacy, "{ADDRESS}" (the address printed in the real IIBS and Rosen campaigns).
+- Footer: LLA = approved dark footer with LLA logo and tagline. Schools = the exact footer of their real campaigns (Rosen sends of Sep 2026 in Omri's inbox): "© 2026 <school> by eTeacher Group / All Rights Reserved." / "Sent to: %EMAIL%" / "Unsubscribe" / "All Rights Reserved. The <school> by eTeacher Group, {ADDRESS}".
 - Greeting: schools "Shalom %FIRSTNAME%," as in their real campaigns; LLA "Hi %FIRSTNAME%," as in the approved set (jm-a1-1). Blank first name renders "Shalom," / "Hi," via ActiveCampaign conditional content.
 - Buttons: schools CAPS ("RESERVE MY SEAT") as in their real campaigns; LLA sentence case ("Reserve My Seat") as in the approved set. All 14 buttons → `{LP}#pricing` with utm_source=activecampaign, utm_medium=email, utm_campaign, utm_content.
 - Images: approved lifecycle Zoom assets only, 1200×700 JPG (2× of the 600px slot), 98 to 117KB each, hosted on this Pages site. Logos:
 {logos}
-- Copy: no em or en dashes, no exclamation marks, no hype words (unlock, elevate, journey, seamless, empower, transform, game-changer, hurry, act now, don't miss out), no invented numbers. "The Longevity Masterclass of the Year", "second slowest-aging human ever measured", "eight months for every year", "$100 a month", the three bullets, the two dates, $49, $79, the $249 promo code and the 14-day refund are the live page's own facts.
+- Copy: letter form in the voice of the school's real campaigns ("Shalom", short paragraphs, one CAPS button, "Warmly," + name, title, school). Longevity language taken from longevitylifeacademy.com ("a simple belief, that everyone deserves a science-backed protocol for a longer, healthier life", nutrition, sleep, movement, stress, "the decades ahead"). No em or en dashes, no exclamation marks, no hype words, no emojis, no invented numbers. "The Longevity Masterclass of the Year", "ten years pass, she ages six", No. 2 Rejuvenation Olympics, "$100 a month", the three bullets, the two dates, $49, $79, the $249 promo code and the 14-day refund are the live page's own facts.
 
 ## Segment coverage
 | Funnel | Use case | Email | Why the reader is getting it (first paragraph) |
