@@ -22,33 +22,26 @@ def you_lla():
 ADDRESS = "eTeacher Group, 8 Aholiav St, 5252261 Ramat Gan, Israel"
 
 # ---------------- shared, corrected copy ----------------
-JULIE_INTRO = ("<p>Julie is 56, a single mother and a recruiter from Phoenix. Her verified DunedinPACE result is <strong>0.665</strong>, "
-               "about <strong>eight months of biological aging per calendar year</strong>: the <strong>2nd slowest-aging human on Earth</strong>, "
-               "No. 2 on the Rejuvenation Olympics leaderboard, ahead of Bryan Johnson and his two-million-dollar-a-year program, "
-               "on about <strong>$100 a month</strong>.</p>")
+JULIE_INTRO = ("<p>Julie is 56. Her verified pace of aging is <strong>0.665</strong> on the DunedinPACE test, "
+               "about <strong>eight months a year</strong>: the <strong>2nd slowest-aging human on Earth</strong>, ahead of Bryan Johnson. "
+               "Her routine costs about <strong>$100 a month</strong>. In sixty live minutes she shows the whole protocol: food, sleep, training, supplements.</p>")
 
-WHAT_SHE_COVERS = ("<p>In the hour: how aging is measured, what she eats and when, lights out at 9:00 pm and up at 5:00 am, "
-                   "her training week (three strength, two zone-2, one sprint), "
-                   "the four-item supplement stack, and the one change to make on Monday.</p>")
+WHAT_SHE_COVERS = ("<p>In the hour: how aging is measured, what she eats and when, lights out at 9:00 pm, up at 5:00 am, "
+                   "her training week (three strength, two zone-2, one sprint), her four supplements, and the one change to make on Monday.</p>")
 
-DATES_PARA = ("<p>Two live dates, <strong>October 27</strong> or <strong>November 14</strong>. Seats start at <strong>$49</strong>; the "
-              "<strong>VIP seat ($79)</strong> adds a <strong>private 30-minute Q&amp;A with Julie</strong> and a "
-              "<strong>$249 credit toward The Longevity Blueprint</strong>, her full 18-lesson course.</p>")
+DATES_PARA = ("<p>Seats start at <strong>$49</strong>. Pick <strong>October 27</strong> or <strong>November 14</strong> at checkout.</p>")
 
 def school_para(school, sister):
-    return (f"<p>{school} is one of eTeacher Group&rsquo;s five online schools, alongside {sister} and "
-            f"<strong>Longevity Life Academy</strong>. On <strong>October 27</strong> the Academy is hosting a live masterclass on Zoom with "
-            f"<strong>Julie Gibson Clark</strong>, and I wanted to tell our own students directly.</p>")
+    return (f"<p>{school} and <strong>Longevity Life Academy</strong> are eTeacher Group schools. On <strong>October 27</strong> the Academy "
+            f"hosts a live Zoom masterclass with <strong>Julie Gibson Clark</strong>, and I wanted you to hear it from me.</p>")
 
-IIBS = ("The Israel Institute of Biblical Studies", "Rosen School of Hebrew")
+IIBS = ("Israel Institute of Biblical Studies", "Rosen School of Hebrew")
 ROSEN = ("Rosen School of Hebrew", "the Israel Institute of Biblical Studies")
 
 DETAILS_ROWS = [
-    ("Instructor", "Julie Gibson Clark, Longevity Life Academy"),
-    ("Format", "Live on Zoom, 60 minutes"),
-    ("Dates", "Tue, October 27, 7:00 PM ET<br>Sat, November 14, 1:00 PM ET"),
+    ("Dates", "Tue, Oct 27, 7:00 PM ET<br>Sat, Nov 14, 1:00 PM ET"),
     ("Standard seat", "$49"),
-    ("VIP seat", "$79, with a private 30-minute Q&amp;A and a $249 Blueprint credit (valid to Dec 31, 2026)"),
+    ("VIP seat", "$79: 30-minute private Q&amp;A, $249 Blueprint credit"),
     ("Refund", "14 days, both seats"),
 ]
 
@@ -56,25 +49,25 @@ BRANDS = {
     "lla": dict(
         name="Longevity Life Academy", short="LLA",
         logo=None, button="Reserve My Seat &middot; From $49",
-        alert_k="Live on Zoom", alert_v="Julie Gibson Clark, the 2nd slowest-aging human on Earth",
+        alert_k="Live on Zoom", alert_v="The 2nd slowest-aging human on Earth",
         footer_tag="It&rsquo;s Your Life. Live It Well. Powered by eTeacher Group.",
-        footer_reason="You received this because you asked about Longevity Life Academy at longevitylifeacademy.com",
+        footer_reason="Sent because you asked about Longevity Life Academy",
         footer_addr="Longevity Life Academy, an eTeacher Group company",
     ),
     "iibs": dict(
         name="Israel Institute of Biblical Studies", short="IIBS",
         logo="iibs-logo.png", button="RESERVE MY SEAT &middot; FROM $49",
-        alert_k="From the eTeacher family", alert_v="A live masterclass hosted by Longevity Life Academy",
-        footer_tag="The Israel Institute of Biblical Studies and Longevity Life Academy are schools of eTeacher Group.",
-        footer_reason="You received this as a student or contact of the Israel Institute of Biblical Studies",
+        alert_k="From the eTeacher family", alert_v="Live on Zoom with Longevity Life Academy",
+        footer_tag="By eTeacher Group.",
+        footer_reason="Sent to you as an IIBS student or contact",
         footer_addr=ADDRESS,
     ),
     "rosen": dict(
         name="Rosen School of Hebrew", short="ROSEN",
         logo="rosen-logo.png", button="RESERVE MY SEAT &middot; FROM $49",
-        alert_k="From the eTeacher family", alert_v="A live masterclass hosted by Longevity Life Academy",
-        footer_tag="Rosen School of Hebrew and Longevity Life Academy are schools of eTeacher Group.",
-        footer_reason="You received this as a student or contact of Rosen School of Hebrew",
+        alert_k="From the eTeacher family", alert_v="Live on Zoom with Longevity Life Academy",
+        footer_tag="By eTeacher Group.",
+        footer_reason="Sent to you as a Rosen student or contact",
         footer_addr=ADDRESS,
     ),
 }
@@ -86,17 +79,17 @@ EMAILS.append(dict(
     ac="LGV_Masterclass_Blast_Leads", campaign="lgv_masterclass_blast_leads",
     sender="Emma | Longevity Advisor <advisor@longevitylifeacademy.com> (existing LLA sender)",
     subject="Julie is teaching her full protocol live. Two dates only",
-    preheader="October 27 or November 14, live on Zoom. Sixty minutes, her exact numbers, seats from $49.",
+    preheader="October 27 or November 14, live on Zoom. From $49.",
     hero="julie-zoom-room.jpg", hero_alt="Julie Gibson Clark hosting the live masterclass room on Zoom",
     h1="Sixty live minutes with the woman who ages <em>eight months a year</em>",
     h1_v2="Sixty live minutes with the woman who ages <em>eight months a year</em>",
     body=[
-        f"<p>{you_lla()} looked at Longevity Life Academy earlier this year, so you are hearing this from us directly, not through an ad.</p>",
-        "<p><strong>Julie Gibson Clark</strong>, our founding faculty member, is teaching her complete protocol <strong>live on Zoom</strong>. Sixty minutes, her exact numbers, not a recording.</p>",
-        JULIE_INTRO, WHAT_SHE_COVERS,
+        f"<p>{you_lla()} looked at Longevity Life Academy this year, so you hear this from us directly, not through an ad.</p>",
+        "<p><strong>Julie Gibson Clark</strong>, our founding faculty member, is teaching her complete protocol <strong>live on Zoom</strong>, not a recording.</p>",
+        JULIE_INTRO,
     ],
     signoff="To your longest, strongest life,<br><b>The Longevity Life Academy team</b>",
-    small="Julie&rsquo;s pace-of-aging result is verified through DunedinPACE testing. Longevity Life Academy is a school of eTeacher Group.",
+    small="Julie&rsquo;s pace-of-aging result is verified through DunedinPACE testing.",
 ))
 
 def school(brand, seg, subject, preheader, hero, h1, opening, sender, signoff, names):
@@ -109,40 +102,40 @@ def school(brand, seg, subject, preheader, hero, h1, opening, sender, signoff, n
         sender=sender, subject=subject, preheader=preheader, hero=hero,
         hero_alt="Julie Gibson Clark teaching live on Zoom, Longevity Life Academy",
         h1=h1, h1_v2=h1,
-        body=[f"<p>{greet_shalom()}</p>", opening, school_para(school_name, sister), JULIE_INTRO, WHAT_SHE_COVERS],
+        body=[f"<p>{greet_shalom()}</p>", opening, school_para(school_name, sister), JULIE_INTRO],
         signoff=signoff,
-        small=f"Julie&rsquo;s pace-of-aging result is verified through DunedinPACE testing. {school_name[0].upper()+school_name[1:]} and Longevity Life Academy are both schools of eTeacher Group.",
+        small="Julie&rsquo;s pace-of-aging result is verified through DunedinPACE testing.",
     )
 
 IIBS_SENDER = "Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com>"
-IIBS_SIGN = "Warmly,<br><b>Sophia Green</b><br>Admissions Advisor, Israel Institute of Biblical Studies, by eTeacher"
+IIBS_SIGN = "Warmly,<br><b>Sophia Green</b><br>Admissions Advisor, Israel Institute of Biblical Studies"
 ROSEN_SENDER = "Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com>"
-ROSEN_SIGN = "Warmly,<br><b>Noa Shalev</b><br>Campus Manager, Rosen School of Hebrew, by eTeacher"
+ROSEN_SIGN = "Warmly,<br><b>Noa Shalev</b><br>Campus Manager, Rosen School of Hebrew"
 
 SEGS = {
     "alumni": dict(
         subject="For our graduates: a live hour with Julie Gibson Clark",
-        preheader="The 2nd slowest-aging human on Earth teaches her protocol live on Zoom. Seats from $49.",
+        preheader="She teaches her protocol live on Zoom. From $49.",
         hero="julie-zoom-host.jpg",
         h1="A different kind of class, from the <em>same family</em> of schools",
-        open_iibs="<p>You completed a course with us, which makes you part of a larger family than you may realize.</p>",
-        open_rosen="<p>You completed a Hebrew course with us, which makes you part of a larger family than you may realize.</p>",
+        open_iibs="<p>You finished a course with us. That family is larger than you may realize.</p>",
+        open_rosen="<p>You finished a Hebrew course with us. That family is larger than you may realize.</p>",
     ),
     "incomplete": dict(
         subject="A 60-minute class, with nothing to catch up on",
-        preheader="One live hour on Zoom with the 2nd slowest-aging human on Earth. Nothing to keep up with. From $49.",
+        preheader="One live hour on Zoom. From $49.",
         hero="julie-portrait.jpg",
         h1="One hour, live, and <em>nothing to catch up on</em>",
-        open_iibs="<p>You began a course with us and life, as it does, got in the way. I am not writing about that. This asks for one hour, with nothing to keep up with afterwards.</p>",
-        open_rosen="<p>You began a Hebrew course with us and life, as it does, got in the way. I am not writing about that. This asks for one hour, with nothing to keep up with afterwards.</p>",
+        open_iibs="<p>You began a course with us and life got in the way. This asks for one hour, nothing to keep up with afterwards.</p>",
+        open_rosen="<p>You began a Hebrew course with us and life got in the way. This asks for one hour, nothing to keep up with afterwards.</p>",
     ),
     "leads": dict(
         subject="She ages eight months a year. Live on Zoom, from $49",
-        preheader="A live hour with the 2nd slowest-aging human on Earth, hosted by our sister school. Two dates.",
+        preheader="Live on Zoom, October 27 or November 14. From $49.",
         hero="julie-zoom-grid.jpg",
         h1="Sixty live minutes with the woman who ages <em>eight months a year</em>",
-        open_iibs="<p>You asked about studying with us, and we have kept in touch since. Today I am writing from a different corner of the same family.</p>",
-        open_rosen="<p>You asked about learning Hebrew with us, and we have kept in touch since. Today I am writing from a different corner of the same family.</p>",
+        open_iibs="<p>You asked about studying with us. Today I write from another corner of it.</p>",
+        open_rosen="<p>You asked about learning Hebrew with us. Today I write from another corner of it.</p>",
     ),
 }
 for seg, s in SEGS.items():
@@ -193,7 +186,7 @@ CSS_V1 = """
   @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.cobrand img.school{height:56px}.cobrand img.lla{height:48px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
 """
 
-def details_block(title="The masterclass at a glance"):
+def details_block(title="At a glance"):
     rows = "\n".join(f'        <tr><td class="k">{k}</td><td class="v">{v}</td></tr>' for k, v in DETAILS_ROWS)
     return f"""    <div class="details">
       <p class="dh">{title}</p>
@@ -235,7 +228,7 @@ def render_v1(e):
   <div class="body-inner">
     <h1>{e['h1']}</h1>
 {body}
-    <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a><p class="btn-meta">Pick your date at checkout. Both seats fully refundable within 14 days.</p></div>
+    <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a><p class="btn-meta">14-day full refund, both seats.</p></div>
 {details_block()}
     <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a></div>
     <div class="signoff">{e['signoff']}</div>
@@ -246,7 +239,7 @@ def render_v1(e):
     <img src="{BASE}/assets/lla-logo-800w.png" alt="Longevity Life Academy">
     <p class="tag">{b['footer_tag']}</p>
     <hr>
-    <p class="fine">{b['footer_reason']} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a><br>{b['footer_addr']}</p>
+    <p class="fine">{b['footer_reason']} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a></p>
   </div>
 </div>
 </td></tr></table></body></html>
@@ -376,7 +369,7 @@ def render_v2(e):
   </td></tr>
   <tr><td style="padding:30px 44px 0;text-align:center">
     <a class="btn" href="{href}">{b['button']}</a>
-    <p class="btn-meta">Seats start at $49. Both seats fully refundable within 14 days.</p>
+    <p class="btn-meta">Seats start at $49. 14-day full refund, both seats.</p>
   </td></tr>
   <tr><td class="press">Covered by <b>Fortune</b> &middot; <b>Business Insider</b> &middot; <b>Daily Mail</b></td></tr>
   <tr><td style="padding:16px 44px 40px;text-align:left">
@@ -394,6 +387,11 @@ def render_v2(e):
 """
 
 # ---------------- write ----------------
+def visible(out):
+    text = re.sub(r"<[^>]+>", " ", re.sub(r"<style.*?</style>", "", out, flags=re.S))
+    text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+    return html.unescape(re.sub(r"\s+", " ", text)).strip()
+def chars(out): return len(visible(out))
 def words(out):
     text = re.sub(r"<[^>]+>", " ", re.sub(r"<style.*?</style>", "", out, flags=re.S))
     text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
@@ -409,11 +407,14 @@ for e in EMAILS:
         os.makedirs(os.path.join(v, e["brand"]), exist_ok=True)
         path = os.path.join(v, e["brand"], e["id"] + ".html")
         open(path, "w", encoding="utf-8").write(out)
-        rec[f"file_{v}"] = path; rec[f"words_{v}"] = words(out)
+        rec[f"file_{v}"] = path; rec[f"words_{v}"] = words(out); rec[f"chars_{v}"] = chars(out)
     manifest.append(rec)
 json.dump(manifest, open("manifest.json", "w"), indent=2)
+CEIL_W, CEIL_C = 262, 1534
+bad=[m["id"] for m in manifest if m["words_v1"]>CEIL_W or m["chars_v1"]>CEIL_C]
+print("V1 ceiling check (<=262 words, <=1534 chars):", "PASS" if not bad else "FAIL "+str(bad))
 for m in manifest:
-    print(m["id"], "| subj", m["subject_len"], "| pre", m["preheader_len"], "| words v1", m["words_v1"], "| v2", m["words_v2"])
+    print(m["id"], "| subj", m["subject_len"], "| pre", m["preheader_len"], "| words v1", m["words_v1"], "| v2", m["words_v2"], "| chars v1", m["chars_v1"], "| v2", m["chars_v2"])
 
 # ---------------- gallery ----------------
 src = open('/home/user/workspace/gallery-src.html', encoding='utf-8').read()
@@ -491,7 +492,7 @@ index = f"""<!doctype html>
 """
 open("index.html", "w", encoding="utf-8").write(index)
 
-rows = "\n".join(f"| `{m['id']}` | {m['brand'].upper()} | {m['segment']} | `{m['ac']}` | {m['sender']} | {m['subject']} ({m['subject_len']}) | {m['preheader']} ({m['preheader_len']}) | {m['words_v1']} / {m['words_v2']} |" for m in manifest)
+rows = "\n".join(f"| `{m['id']}` | {m['brand'].upper()} | {m['segment']} | `{m['ac']}` | {m['sender']} | {m['subject']} ({m['subject_len']}) | {m['preheader']} ({m['preheader_len']}) | {m['words_v1']} / {m['words_v2']} ({m['chars_v1']}) |" for m in manifest)
 readme = f"""# Julie Masterclass blast · 7 segments · V1 approved shell + V2 announcement design
 
 Built 13 Oct 2026 for Chris and Sandra. Review gallery: https://gitteromri-ux.github.io/julie-masterclass-blast/
@@ -504,7 +505,7 @@ One-time ActiveCampaign campaigns (not automations). Files: `v1/<brand>/<id>.htm
 
 ## Files
 
-| Id | Brand | Segment | AC campaign name | Sender | Subject (chars) | Preheader (chars) | Words V1 / V2 |
+| Id | Brand | Segment | AC campaign name | Sender | Subject (chars) | Preheader (chars) | Words V1 / V2 (chars V1) |
 |---|---|---|---|---|---|---|---|
 {rows}
 
@@ -544,7 +545,7 @@ Exclude from every school send: contacts already registered for the masterclass 
 3. Alumni subject no longer leans on the eTeacher name: "For our graduates: a live hour with Julie Gibson Clark".
 4. "three-two-one training week" spelled out: three strength sessions, two zone-2 sessions, one sprint session.
 5. Co-branded header (school logo + LLA logo) on every school email, both shells.
-6. Length: the dates paragraph moved into the details box (V1) or the date and seat cards (V2); word counts above.
+6. Length: V1 is at or under the approved lifecycle set's ceiling on every email (approved set: 191 to 262 words, 1,203 to 1,534 visible characters; the build fails otherwise). V2 carries the stat band and the date and seat cards, so it runs about 320 to 330 words; see the table.
 7. Blank first name: AC conditional content fallback on every greeting.
 8. IIBS sender corrected to a verified IIBS-domain sender (Sophia Green).
 9. Footer carries the real eTeacher Group postal address on school sends.

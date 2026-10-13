@@ -10,15 +10,15 @@ One-time ActiveCampaign campaigns (not automations). Files: `v1/<brand>/<id>.htm
 
 ## Files
 
-| Id | Brand | Segment | AC campaign name | Sender | Subject (chars) | Preheader (chars) | Words V1 / V2 |
+| Id | Brand | Segment | AC campaign name | Sender | Subject (chars) | Preheader (chars) | Words V1 / V2 (chars V1) |
 |---|---|---|---|---|---|---|---|
-| `lla-leads-01` | LLA | LLA leads, last 3-4 months, not enrolled | `LGV_Masterclass_Blast_Leads` | Emma | Longevity Advisor <advisor@longevitylifeacademy.com> (existing LLA sender) | Julie is teaching her full protocol live. Two dates only (56) | October 27 or November 14, live on Zoom. Sixty minutes, her exact numbers, seats from $49. (90) | 391 / 395 |
-| `iibs-alumni-01` | IIBS | alumni (completed a course) | `IIBS_Masterclass_Blast_Alumni` | Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com> | For our graduates: a live hour with Julie Gibson Clark (54) | The 2nd slowest-aging human on Earth teaches her protocol live on Zoom. Seats from $49. (87) | 430 / 433 |
-| `iibs-incomplete-01` | IIBS | students who enrolled and did not finish | `IIBS_Masterclass_Blast_Incomplete` | Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com> | A 60-minute class, with nothing to catch up on (46) | One live hour on Zoom with the 2nd slowest-aging human on Earth. Nothing to keep up with. From $49. (99) | 446 / 449 |
-| `iibs-leads-01` | IIBS | leads (asked about a course, never enrolled) | `IIBS_Masterclass_Blast_Leads` | Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com> | She ages eight months a year. Live on Zoom, from $49 (52) | A live hour with the 2nd slowest-aging human on Earth, hosted by our sister school. Two dates. (94) | 441 / 444 |
-| `rosen-alumni-01` | ROSEN | alumni (completed a course) | `ROSEN_Masterclass_Blast_Alumni` | Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com> | For our graduates: a live hour with Julie Gibson Clark (54) | The 2nd slowest-aging human on Earth teaches her protocol live on Zoom. Seats from $49. (87) | 423 / 426 |
-| `rosen-incomplete-01` | ROSEN | students who enrolled and did not finish | `ROSEN_Masterclass_Blast_Incomplete` | Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com> | A 60-minute class, with nothing to catch up on (46) | One live hour on Zoom with the 2nd slowest-aging human on Earth. Nothing to keep up with. From $49. (99) | 439 / 442 |
-| `rosen-leads-01` | ROSEN | leads (asked about a course, never enrolled) | `ROSEN_Masterclass_Blast_Leads` | Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com> | She ages eight months a year. Live on Zoom, from $49 (52) | A live hour with the 2nd slowest-aging human on Earth, hosted by our sister school. Two dates. (94) | 434 / 437 |
+| `lla-leads-01` | LLA | LLA leads, last 3-4 months, not enrolled | `LGV_Masterclass_Blast_Leads` | Emma | Longevity Advisor <advisor@longevitylifeacademy.com> (existing LLA sender) | Julie is teaching her full protocol live. Two dates only (56) | October 27 or November 14, live on Zoom. From $49. (50) | 252 / 320 (1477) |
+| `iibs-alumni-01` | IIBS | alumni (completed a course) | `IIBS_Masterclass_Blast_Alumni` | Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com> | For our graduates: a live hour with Julie Gibson Clark (54) | She teaches her protocol live on Zoom. From $49. (48) | 258 / 325 (1524) |
+| `iibs-incomplete-01` | IIBS | students who enrolled and did not finish | `IIBS_Masterclass_Blast_Incomplete` | Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com> | A 60-minute class, with nothing to catch up on (46) | One live hour on Zoom. From $49. (32) | 262 / 329 (1525) |
+| `iibs-leads-01` | IIBS | leads (asked about a course, never enrolled) | `IIBS_Masterclass_Blast_Leads` | Sophia Green, Israel Institute of Biblical Studies <SophiaG@israelbiblicalstudies.com> | She ages eight months a year. Live on Zoom, from $49 (52) | Live on Zoom, October 27 or November 14. From $49. (50) | 261 / 328 (1527) |
+| `rosen-alumni-01` | ROSEN | alumni (completed a course) | `ROSEN_Masterclass_Blast_Alumni` | Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com> | For our graduates: a live hour with Julie Gibson Clark (54) | She teaches her protocol live on Zoom. From $49. (48) | 256 / 323 (1485) |
+| `rosen-incomplete-01` | ROSEN | students who enrolled and did not finish | `ROSEN_Masterclass_Blast_Incomplete` | Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com> | A 60-minute class, with nothing to catch up on (46) | One live hour on Zoom. From $49. (32) | 260 / 327 (1486) |
+| `rosen-leads-01` | ROSEN | leads (asked about a course, never enrolled) | `ROSEN_Masterclass_Blast_Leads` | Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com> | She ages eight months a year. Live on Zoom, from $49 (52) | Live on Zoom, October 27 or November 14. From $49. (50) | 259 / 326 (1488) |
 
 All buttons go to `https://www.longevitylifeacademy.com/julie-masterclass/#pricing` with `utm_source=activecampaign&utm_medium=email&utm_campaign=<group>&utm_content=<id>`.
 Julie-page tracking (pixel + CAPI) only fires on `www.longevitylifeacademy.com/julie-masterclass/`, so do not point these at any other host.
@@ -56,7 +56,7 @@ Exclude from every school send: contacts already registered for the masterclass 
 3. Alumni subject no longer leans on the eTeacher name: "For our graduates: a live hour with Julie Gibson Clark".
 4. "three-two-one training week" spelled out: three strength sessions, two zone-2 sessions, one sprint session.
 5. Co-branded header (school logo + LLA logo) on every school email, both shells.
-6. Length: the dates paragraph moved into the details box (V1) or the date and seat cards (V2); word counts above.
+6. Length: V1 is at or under the approved lifecycle set's ceiling on every email (approved set: 191 to 262 words, 1,203 to 1,534 visible characters; the build fails otherwise). V2 carries the stat band and the date and seat cards, so it runs about 320 to 330 words; see the table.
 7. Blank first name: AC conditional content fallback on every greeting.
 8. IIBS sender corrected to a verified IIBS-domain sender (Sophia Green).
 9. Footer carries the real eTeacher Group postal address on school sends.
