@@ -8,14 +8,14 @@ tokens %FIRSTNAME%, %UNSUBSCRIBELINK%, %UPDATELINK%; whole-file length 191 to 26
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
 | lla-leads-01 | 54 | 91 | 380 | 2265 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
-| iibs-alumni-01 | 69 | 100 | 418 | 2573 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| iibs-incomplete-01 | 71 | 100 | 434 | 2667 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| iibs-leads-01 | 67 | 100 | 415 | 2549 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
-| rosen-alumni-01 | 51 | 100 | 409 | 2463 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| rosen-incomplete-01 | 53 | 100 | 425 | 2557 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| rosen-leads-01 | 49 | 100 | 406 | 2449 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| iibs-alumni-01 | 69 | 100 | 415 | 2559 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| iibs-incomplete-01 | 71 | 100 | 431 | 2653 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| iibs-leads-01 | 67 | 100 | 412 | 2535 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| rosen-alumni-01 | 51 | 100 | 406 | 2449 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| rosen-incomplete-01 | 53 | 100 | 422 | 2543 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| rosen-leads-01 | 49 | 100 | 403 | 2435 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
 
-Word count vs the approved set: these are cold invitations with a who-is-Julie paragraph and three bullets that the lifecycle emails did not need; Omri allowed "a little more". All seven are within +172 words of the set's longest email.
+Word count vs the approved set: these are cold invitations with a who-is-Julie paragraph and three bullets that the lifecycle emails did not need; Omri allowed "a little more". All seven are within +169 words of the set's longest email.
 
 ## Format checks
 - Header: LLA = navy header with the LLA logo (approved). Schools = white header, school logo (84px tall) left, "A school of" + eTeacher Group logo (30px) right. Two logos, not three.
