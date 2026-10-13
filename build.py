@@ -419,6 +419,9 @@ for m in manifest:
 src = open('/home/user/workspace/gallery-src.html', encoding='utf-8').read()
 css = src[src.index('<style>'):src.index('</style>')+8]
 script = src[src.index('<script>'):src.index('</script>')+9]
+script = script.replace("f.addEventListener('load',function(){ fit(f);", "f.addEventListener('load',function(){ acPreview(f); fit(f);")
+script = script.replace("(function(){", "(function(){\n  function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\\(\\$FIRSTNAME\\)%([\\s\\S]*?)%ELSE%[\\s\\S]*?%\\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }", 1)
+assert 'acPreview(f); fit(f)' in script
 COL = {"lla": "#5EB6FF", "iibs": "#F5C451", "rosen": "#A78BFA"}
 GROUPS = [
   ("lla", "Longevity Life Academy", "LLA leads from the last 3 to 4 months who did not enrol. Sender: Emma | Longevity Advisor &lt;advisor@longevitylifeacademy.com&gt;, the existing LLA sender.", "1 email"),

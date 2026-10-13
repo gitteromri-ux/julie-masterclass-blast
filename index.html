@@ -144,9 +144,10 @@ iframe{display:block;width:100%;border:0;background:#fff;min-height:700px}
 </main>
 <script>
 (function(){
+  function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\(\$FIRSTNAME\)%([\s\S]*?)%ELSE%[\s\S]*?%\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }
   var frames=[].slice.call(document.querySelectorAll('iframe[data-src]'));
   function fit(f){ try{ var d=f.contentDocument; if(d&&d.body){ var h=Math.max(d.documentElement.scrollHeight,d.body.scrollHeight); if(h>200) f.style.height=(h+20)+'px'; } }catch(e){} }
-  function load(f){ if(f.src) return; f.src=f.getAttribute('data-src'); f.addEventListener('load',function(){ fit(f); setTimeout(function(){fit(f)},800); setTimeout(function(){fit(f)},2500); }); }
+  function load(f){ if(f.src) return; f.src=f.getAttribute('data-src'); f.addEventListener('load',function(){ acPreview(f); fit(f); setTimeout(function(){fit(f)},800); setTimeout(function(){fit(f)},2500); }); }
   if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ load(e.target); io.unobserve(e.target); } }); },{rootMargin:'900px'}); frames.forEach(function(f){io.observe(f)}); } else frames.forEach(load);
   document.querySelectorAll('.btn.copy').forEach(function(b){
     b.addEventListener('click',function(){
