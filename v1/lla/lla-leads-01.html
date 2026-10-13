@@ -1,4 +1,4 @@
-<!-- AC: LGV_Masterclass_Blast_Leads | one-time campaign | segment: LLA leads, last 3-4 months, not enrolled | sender: Longevity Life Academy (existing LLA sender) | file lla/lla-leads-01 -->
+<!-- AC: LGV_Masterclass_Blast_Leads | one-time campaign | v1 | segment: LLA leads, last 3-4 months, not enrolled | sender: Emma | Longevity Advisor <advisor@longevitylifeacademy.com> (existing LLA sender) | file v1/lla/lla-leads-01 -->
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,8 +9,12 @@
   .wrap{max-width:640px;margin:0 auto;background:#FFFFFF;border-radius:6px;overflow:hidden}
   .top-navy{background:#0A1E3F;padding:30px 20px;text-align:center}
   .top-navy img{display:inline-block;height:104px;width:auto}
-  .top-white{background:#FFFFFF;padding:26px 20px 22px;text-align:center}
-  .top-white img{display:inline-block;height:96px;width:auto}
+  .cobrand{background:#FFFFFF;padding:24px 20px 20px}
+  .cobrand table{width:100%;border-collapse:collapse}
+  .cobrand td{vertical-align:middle;text-align:center}
+  .cobrand img.school{height:84px;width:auto;display:inline-block}
+  .cobrand img.lla{height:70px;width:auto;display:inline-block}
+  .cobrand td.rule{width:1px;border-left:1px solid #D7DEEA}
   .divider{height:4px;background:#5EB6FF}
   .alert{background:#0A1E3F;padding:18px 24px;text-align:center;color:#fff;font-size:14px}
   .alert b{color:#5EB6FF;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-right:10px}
@@ -20,8 +24,6 @@
   h1 em{font-style:italic;color:#2E6FB8}
   p{font-size:17px;line-height:1.65;color:#2a3244;margin:0 0 18px}
   p b, p strong{color:#0A1220;font-weight:700}
-  ul{margin:0 0 20px;padding-left:22px}
-  li{font-size:17px;line-height:1.6;color:#2a3244;margin:0 0 8px}
   .details{background:#F5F0E5;border-radius:8px;padding:24px 28px;margin:26px 0}
   .details .dh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2E6FB8;margin:0 0 12px}
   .details table{width:100%;border-collapse:collapse}
@@ -40,23 +42,23 @@
   .footer hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:14px auto;max-width:220px}
   .footer .fine{font-size:11px;line-height:1.5;color:#8494B4;padding:0 20px}
   .footer .fine a{color:#8494B4;text-decoration:underline}
-  @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.top-white img{height:78px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
+  @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.cobrand img.school{height:56px}.cobrand img.lla{height:48px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
 </style></head><body>
 <div class="preheader">October 27 or November 14, live on Zoom. Sixty minutes, her exact numbers, seats from $49.</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5F0E5"><tr><td align="center" style="padding:24px 12px">
 <div class="wrap">
   <div class="top-navy"><img src="https://gitteromri-ux.github.io/julie-masterclass-blast/assets/lla-logo-800w.png" alt="Longevity Life Academy by eTeacher Group"></div>
   <div class="divider"></div>
-  <div class="alert"><b>Live on Zoom</b>&middot;&nbsp; Julie Gibson Clark, ranked No. 2 in the Rejuvenation Olympics</div>
+  <div class="alert"><b>Live on Zoom</b>&middot;&nbsp; Julie Gibson Clark, the 2nd slowest-aging human on Earth</div>
   <img class="hero-img" src="https://gitteromri-ux.github.io/julie-masterclass-blast/assets/images/julie-zoom-room.jpg" alt="Julie Gibson Clark hosting the live masterclass room on Zoom">
 
   <div class="body-inner">
     <h1>Sixty live minutes with the woman who ages <em>eight months a year</em></h1>
-    <p>%FIRSTNAME%, you looked at Longevity Life Academy earlier this year, so you are hearing this from us directly, not through an ad.</p>
-      <p><strong>Julie Gibson Clark</strong>, our founding faculty member, is teaching her complete protocol <strong>live on Zoom</strong>. Sixty minutes, her exact numbers, not a recording.</p>
-      <p>Julie is 56, a single mother and a recruiter from Phoenix. Her verified pace of aging is <strong>0.665</strong> on the DunedinPACE test, about <strong>eight months of biological aging per calendar year</strong>. That places her <strong>No. 2 in the Rejuvenation Olympics</strong>, ahead of Bryan Johnson and his two-million-dollar-a-year program. Her routine costs about <strong>$100 a month</strong>. Fortune, Business Insider and the Daily Mail have all covered her.</p>
-      <p>In the hour: how aging is measured, what she eats and when, lights out at 9:00 pm and up at 5:00 am, her three-two-one training week, the four-item supplement stack, and the one change to make on Monday.</p>
-      <p>Two live dates this year: <strong>Tuesday, October 27 at 7:00 PM ET</strong> or <strong>Saturday, November 14 at 1:00 PM ET</strong>. Seats start at <strong>$49</strong>. The <strong>VIP seat ($79)</strong> adds a <strong>private 30-minute Q&amp;A with Julie</strong> and a <strong>$249 credit toward The Longevity Blueprint</strong>, her full 18-lesson course.</p>
+    <p>%IF !empty($FIRSTNAME)%%FIRSTNAME%, you%ELSE%You%/IF% looked at Longevity Life Academy earlier this year, so you are hearing this from us directly, not through an ad.</p>
+    <p><strong>Julie Gibson Clark</strong>, our founding faculty member, is teaching her complete protocol <strong>live on Zoom</strong>. Sixty minutes, her exact numbers, not a recording.</p>
+    <p>Julie is 56, a single mother and a recruiter from Phoenix. Her verified DunedinPACE result is <strong>0.665</strong>, about <strong>eight months of biological aging per calendar year</strong>: the <strong>2nd slowest-aging human on Earth</strong>, No. 2 on the Rejuvenation Olympics leaderboard, ahead of Bryan Johnson and his two-million-dollar-a-year program, on about <strong>$100 a month</strong>.</p>
+    <p>In the hour: how aging is measured, what she eats and when, lights out at 9:00 pm and up at 5:00 am, her training week (three strength, two zone-2, one sprint), the four-item supplement stack, and the one change to make on Monday.</p>
+    <p>Two live dates, <strong>October 27</strong> or <strong>November 14</strong>. Seats start at <strong>$49</strong>; the <strong>VIP seat ($79)</strong> adds a <strong>private 30-minute Q&amp;A with Julie</strong> and a <strong>$249 credit toward The Longevity Blueprint</strong>, her full 18-lesson course.</p>
     <div class="btn-row"><a class="btn" href="https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&amp;utm_medium=email&amp;utm_campaign=lgv_masterclass_blast_leads&amp;utm_content=lla-leads-01#pricing">Reserve My Seat &middot; From $49</a><p class="btn-meta">Pick your date at checkout. Both seats fully refundable within 14 days.</p></div>
     <div class="details">
       <p class="dh">The masterclass at a glance</p>
@@ -78,7 +80,7 @@
     <img src="https://gitteromri-ux.github.io/julie-masterclass-blast/assets/lla-logo-800w.png" alt="Longevity Life Academy">
     <p class="tag">It&rsquo;s Your Life. Live It Well. Powered by eTeacher Group.</p>
     <hr>
-    <p class="fine">You received this because you asked about Longevity Life Academy at longevitylifeacademy.com &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a></p>
+    <p class="fine">You received this because you asked about Longevity Life Academy at longevitylifeacademy.com &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a><br>Longevity Life Academy, an eTeacher Group company</p>
   </div>
 </div>
 </td></tr></table></body></html>
