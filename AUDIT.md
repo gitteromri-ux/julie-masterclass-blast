@@ -7,7 +7,7 @@ tokens %FIRSTNAME%, %UNSUBSCRIBELINK% (schools also %EMAIL%); whole-file length 
 ## Per email
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
-| lla-leads-01 | 54 | 90 | 429 | 2450 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
+| lla-leads-01 | 54 | 90 | 428 | 2440 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
 | iibs-alumni-01 | 69 | 104 | 475 | 2821 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
 | iibs-incomplete-01 | 71 | 104 | 494 | 2914 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
 | iibs-leads-01 | 67 | 104 | 469 | 2768 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |

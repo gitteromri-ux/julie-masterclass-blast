@@ -178,7 +178,7 @@ def render(e):
 {body}
     <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a><p class="btn-meta">Choose your date at checkout. 14-day full refund on both seats.</p></div>
     <div class="details">
-      <p class="dh">Your student access</p>
+      <p class="dh">{"Your seat" if e["brand"]=="lla" else "Your student access"}</p>
       <table role="presentation">
 {rows}
       </table>
