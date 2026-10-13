@@ -13,11 +13,11 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=lgv_masterclass_blast_leads&utm_content=lla-leads-01#pricing",
     "hero_v1": "julie-zoom-room.jpg",
     "file_v1": "v1/lla/lla-leads-01.html",
-    "words_v1": 252,
-    "chars_v1": 1477,
+    "words_v1": 249,
+    "chars_v1": 1458,
     "file_v2": "v2/lla/lla-leads-01.html",
-    "words_v2": 320,
-    "chars_v2": 1905
+    "words_v2": 317,
+    "chars_v2": 1886
   },
   {
     "id": "iibs-alumni-01",
@@ -33,11 +33,11 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=iibs_masterclass_blast&utm_content=iibs-alumni-01#pricing",
     "hero_v1": "julie-zoom-host.jpg",
     "file_v1": "v1/iibs/iibs-alumni-01.html",
-    "words_v1": 258,
-    "chars_v1": 1524,
+    "words_v1": 260,
+    "chars_v1": 1532,
     "file_v2": "v2/iibs/iibs-alumni-01.html",
-    "words_v2": 325,
-    "chars_v2": 1941
+    "words_v2": 328,
+    "chars_v2": 1953
   },
   {
     "id": "iibs-incomplete-01",
@@ -53,11 +53,11 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=iibs_masterclass_blast&utm_content=iibs-incomplete-01#pricing",
     "hero_v1": "julie-portrait.jpg",
     "file_v1": "v1/iibs/iibs-incomplete-01.html",
-    "words_v1": 262,
-    "chars_v1": 1525,
+    "words_v1": 260,
+    "chars_v1": 1508,
     "file_v2": "v2/iibs/iibs-incomplete-01.html",
-    "words_v2": 329,
-    "chars_v2": 1942
+    "words_v2": 328,
+    "chars_v2": 1929
   },
   {
     "id": "iibs-leads-01",
@@ -73,11 +73,11 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=iibs_masterclass_blast&utm_content=iibs-leads-01#pricing",
     "hero_v1": "julie-zoom-grid.jpg",
     "file_v1": "v1/iibs/iibs-leads-01.html",
-    "words_v1": 261,
-    "chars_v1": 1527,
+    "words_v1": 260,
+    "chars_v1": 1516,
     "file_v2": "v2/iibs/iibs-leads-01.html",
     "words_v2": 328,
-    "chars_v2": 1944
+    "chars_v2": 1937
   },
   {
     "id": "rosen-alumni-01",
@@ -93,11 +93,11 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=rosen_masterclass_blast&utm_content=rosen-alumni-01#pricing",
     "hero_v1": "julie-zoom-host.jpg",
     "file_v1": "v1/rosen/rosen-alumni-01.html",
-    "words_v1": 256,
-    "chars_v1": 1485,
+    "words_v1": 258,
+    "chars_v1": 1493,
     "file_v2": "v2/rosen/rosen-alumni-01.html",
-    "words_v2": 323,
-    "chars_v2": 1902
+    "words_v2": 326,
+    "chars_v2": 1914
   },
   {
     "id": "rosen-incomplete-01",
@@ -113,11 +113,11 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=rosen_masterclass_blast&utm_content=rosen-incomplete-01#pricing",
     "hero_v1": "julie-portrait.jpg",
     "file_v1": "v1/rosen/rosen-incomplete-01.html",
-    "words_v1": 260,
-    "chars_v1": 1486,
+    "words_v1": 258,
+    "chars_v1": 1469,
     "file_v2": "v2/rosen/rosen-incomplete-01.html",
-    "words_v2": 327,
-    "chars_v2": 1903
+    "words_v2": 326,
+    "chars_v2": 1890
   },
   {
     "id": "rosen-leads-01",
@@ -133,10 +133,10 @@
     "cta": "https://www.longevitylifeacademy.com/julie-masterclass/?utm_source=activecampaign&utm_medium=email&utm_campaign=rosen_masterclass_blast&utm_content=rosen-leads-01#pricing",
     "hero_v1": "julie-zoom-grid.jpg",
     "file_v1": "v1/rosen/rosen-leads-01.html",
-    "words_v1": 259,
-    "chars_v1": 1488,
+    "words_v1": 258,
+    "chars_v1": 1477,
     "file_v2": "v2/rosen/rosen-leads-01.html",
     "words_v2": 326,
-    "chars_v2": 1905
+    "chars_v2": 1898
   }
 ]

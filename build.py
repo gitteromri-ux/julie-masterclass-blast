@@ -22,9 +22,9 @@ def you_lla():
 ADDRESS = "eTeacher Group, 8 Aholiav St, 5252261 Ramat Gan, Israel"
 
 # ---------------- shared, corrected copy ----------------
-JULIE_INTRO = ("<p>Julie is 56. Her verified pace of aging is <strong>0.665</strong> on the DunedinPACE test, "
+JULIE_INTRO = ("<p>Julie is 56. Her verified pace of aging is <strong>0.665</strong> (DunedinPACE), "
                "about <strong>eight months a year</strong>: the <strong>2nd slowest-aging human on Earth</strong>, ahead of Bryan Johnson. "
-               "Her routine costs about <strong>$100 a month</strong>. In sixty live minutes she shows the whole protocol: food, sleep, training, supplements.</p>")
+               "Her routine costs about <strong>$100 a month</strong>. In sixty live minutes she shows all of it: food, sleep, training, supplements.</p>")
 
 WHAT_SHE_COVERS = ("<p>In the hour: how aging is measured, what she eats and when, lights out at 9:00 pm, up at 5:00 am, "
                    "her training week (three strength, two zone-2, one sprint), her four supplements, and the one change to make on Monday.</p>")
@@ -33,7 +33,7 @@ DATES_PARA = ("<p>Seats start at <strong>$49</strong>. Pick <strong>October 27</
 
 def school_para(school, sister):
     return (f"<p>{school} and <strong>Longevity Life Academy</strong> are eTeacher Group schools. On <strong>October 27</strong> the Academy "
-            f"hosts a live Zoom masterclass with <strong>Julie Gibson Clark</strong>, and I wanted you to hear it from me.</p>")
+            f"hosts a live Zoom masterclass with <strong>Julie Gibson Clark</strong>. I wanted you to hear it from me.</p>")
 
 IIBS = ("Israel Institute of Biblical Studies", "Rosen School of Hebrew")
 ROSEN = ("Rosen School of Hebrew", "the Israel Institute of Biblical Studies")
@@ -57,7 +57,7 @@ BRANDS = {
     "iibs": dict(
         name="Israel Institute of Biblical Studies", short="IIBS",
         logo="iibs-logo.png", button="RESERVE MY SEAT &middot; FROM $49",
-        alert_k="From the eTeacher family", alert_v="Live on Zoom with Longevity Life Academy",
+        alert_k="From the eTeacher family", alert_v="Live on Zoom, Longevity Life Academy",
         footer_tag="By eTeacher Group.",
         footer_reason="Sent to you as an IIBS student or contact",
         footer_addr=ADDRESS,
@@ -65,7 +65,7 @@ BRANDS = {
     "rosen": dict(
         name="Rosen School of Hebrew", short="ROSEN",
         logo="rosen-logo.png", button="RESERVE MY SEAT &middot; FROM $49",
-        alert_k="From the eTeacher family", alert_v="Live on Zoom with Longevity Life Academy",
+        alert_k="From the eTeacher family", alert_v="Live on Zoom, Longevity Life Academy",
         footer_tag="By eTeacher Group.",
         footer_reason="Sent to you as a Rosen student or contact",
         footer_addr=ADDRESS,
@@ -118,24 +118,24 @@ SEGS = {
         preheader="She teaches her protocol live on Zoom. From $49.",
         hero="julie-zoom-host.jpg",
         h1="A different kind of class, from the <em>same family</em> of schools",
-        open_iibs="<p>You finished a course with us. That family is larger than you may realize.</p>",
-        open_rosen="<p>You finished a Hebrew course with us. That family is larger than you may realize.</p>",
+        open_iibs="<p>You finished a course with us, so you know how we teach: live, small, a real teacher. Same here, new subject.</p>",
+        open_rosen="<p>You finished a Hebrew course with us, so you know how we teach: live, small, a real teacher. Same here, new subject.</p>",
     ),
     "incomplete": dict(
         subject="A 60-minute class, with nothing to catch up on",
         preheader="One live hour on Zoom. From $49.",
         hero="julie-portrait.jpg",
         h1="One hour, live, and <em>nothing to catch up on</em>",
-        open_iibs="<p>You began a course with us and life got in the way. This asks for one hour, nothing to keep up with afterwards.</p>",
-        open_rosen="<p>You began a Hebrew course with us and life got in the way. This asks for one hour, nothing to keep up with afterwards.</p>",
+        open_iibs="<p>You began a course with us and life got in the way. This asks for one hour on one evening, nothing to keep up with after.</p>",
+        open_rosen="<p>You began a Hebrew course with us and life got in the way. This asks for one hour on one evening, nothing to keep up with after.</p>",
     ),
     "leads": dict(
         subject="She ages eight months a year. Live on Zoom, from $49",
         preheader="Live on Zoom, October 27 or November 14. From $49.",
         hero="julie-zoom-grid.jpg",
         h1="Sixty live minutes with the woman who ages <em>eight months a year</em>",
-        open_iibs="<p>You asked about studying with us. Today I write from another corner of it.</p>",
-        open_rosen="<p>You asked about learning Hebrew with us. Today I write from another corner of it.</p>",
+        open_iibs="<p>You asked about studying with us a while ago. Today I write about a sister school of ours.</p>",
+        open_rosen="<p>You asked about learning Hebrew with us a while ago. Today I write about a sister school of ours.</p>",
     ),
 }
 for seg, s in SEGS.items():
