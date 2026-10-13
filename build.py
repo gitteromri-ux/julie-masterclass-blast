@@ -23,14 +23,14 @@ BRANDS = {
                 footer_tag="It&rsquo;s Your Life. Live It Well. Powered by eTeacher Group.", footer_reason="You received this because you asked about Longevity Life Academy", footer_addr=""),
     "iibs": dict(name="Israel Institute of Biblical Studies", short="Israel Biblical Studies", logo="iibs-logo.png",
                  sender="Sophia Green, Israel Biblical Studies <SophiaG@israelbiblicalstudies.com>", button="RESERVE MY SEAT",
-                 alert_k="Student pricing", alert_v="From $49, 72 hours before public release",
+                 alert_k="For our students", alert_v="The Longevity Masterclass of the Year, from $49",
                  sign="Warmly,<br><b>Sophia Green</b><br>Admissions Advisor<br>Israel Institute of Biblical Studies",
                  footer_tag="&copy; 2026 Israel Institute of Biblical Studies by eTeacher Group<br>All Rights Reserved.",
                  footer_addr="All Rights Reserved. The Israel Institute of Biblical Studies by eTeacher Group, "+ADDRESS,
                  course="course", enrol="enrolling at the Israel Institute of Biblical Studies"),
     "rosen": dict(name="Rosen School of Hebrew", short="Rosen", logo="rosen-logo.png",
                   sender="Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com>", button="RESERVE MY SEAT",
-                  alert_k="Student pricing", alert_v="From $49, 72 hours before public release",
+                  alert_k="For our students", alert_v="The Longevity Masterclass of the Year, from $49",
                   sign="Warmly,<br><b>Noa Shalev</b><br>Campus Manager<br>Rosen School of Hebrew",
                   footer_tag="&copy; 2026 Rosen School of Hebrew by eTeacher Group<br>All Rights Reserved.",
                   footer_addr="All Rights Reserved. The Rosen School of Hebrew by eTeacher Group, "+ADDRESS,
@@ -46,33 +46,35 @@ LEARN = ("<h2>What you will learn in 60 minutes, live on Zoom</h2>"
          "<ul><li><strong>Measuring biological aging:</strong> how aging speed is measured, and what actually moves it</li>"
          "<li><strong>Food, sleep and movement:</strong> her rules, in numbers</li>"
          "<li><strong>Her daily protocol:</strong> a full day built to repeat, with her one-page schedule and supplement list, yours to keep</li></ul>")
-PRICE = ("<h2>Your student pricing</h2>"
+PRICE = ("<h2>Your seat, and your student benefit</h2>"
          '<div class="offer"><p><strong>Standard seat, $49:</strong> the 60-minute live masterclass.</p>'
-         '<p><strong>VIP seat, $79:</strong> the masterclass, a private 30-minute Q&amp;A with Julie, and a <strong class="promo">$249 promo code</strong> toward The Longevity Blueprint, her full course, valid until December 31, 2026.</p>'
+         '<p><strong>VIP seat, $79:</strong> the masterclass, plus a private 30-minute Q&amp;A with Julie for your own questions.</p>'
+         '<div class="promo-box"><p class="promo-k">Included with your VIP seat</p>'
+         '<p class="promo-v">A <span>$249 promo code</span> toward The Longevity Blueprint, Julie&rsquo;s full course</p>'
+         '<p class="promo-s">Valid until December 31, 2026</p></div>'
          "<p>Choose October 27 or November 14. 14-day full refund on both seats.</p></div>")
 CLICK = "<p>If you would like a seat, click below.</p>"
 def after_(b):
-    who = "eTeacher Group students" if b != "lla" else "the people who asked about the Academy"
-    return [f"<p>This invitation is for {who} for 72 hours. After that, registration opens to the public.</p>"]
+    return ["<p>Seats are limited. If you have a question before you decide, reply to this email.</p>"]
 
 def school_body(b, seg):
     B = BRANDS[b]; name = B["name"]
     open_ = {
-        "alumni": f"<p>I am writing with an invitation of a different kind. As a graduate of {name}, you are part of the eTeacher Group family of students, so this reaches you 72 hours before it opens to the public.</p>",
-        "incomplete": f"<p>I am writing with an invitation of a different kind. As a student of {name}, you are part of the eTeacher Group family of students, so this reaches you 72 hours before it opens to the public. There is nothing to catch up on. It is one live hour.</p>",
-        "leads": f"<p>I am writing with an invitation of a different kind. You asked about studying at {name}, which places you in the eTeacher Group family of students, so this reaches you 72 hours before it opens to the public.</p>",
+        "alumni": f"<p>I am writing with an invitation of a different kind. As a graduate of {name}, you are part of the eTeacher Group family of students, and we wanted you to have this.</p>",
+        "incomplete": f"<p>I am writing with an invitation of a different kind. As a student of {name}, you are part of the eTeacher Group family of students, and we wanted you to have this. There is nothing to catch up on. It is one live hour.</p>",
+        "leads": f"<p>I am writing with an invitation of a different kind. You asked about studying at {name}, which places you in the eTeacher Group family of students, and we wanted you to have this.</p>",
     }[seg]
     return [f"<p>{shalom()}</p>", open_,
         "<p>This year eTeacher Group opened <strong>Longevity Life Academy</strong>, a school built on one belief: everyone deserves a science-backed protocol for a longer, healthier life. "
         "Aging can now be measured and slowed, and the decades ahead can be the strongest.</p>",
-        "<p>On <strong>October 27</strong>, the Academy is hosting <strong>The Longevity Masterclass of the Year</strong>, and I would like to offer you a seat at our student pricing.</p>",
+        "<p>On <strong>October 27</strong>, the Academy is hosting <strong>The Longevity Masterclass of the Year</strong>, and I would like to offer you one of a limited number of seats, together with a benefit for our students.</p>",
         JULIE, LEARN, PRICE, CLICK]
 
 LLA_BODY = [f"<p>{hi()}</p>",
-    "<p>You asked about Longevity Life Academy this year, so this reaches you 72 hours before we open it to the public.</p>",
+    "<p>You asked about Longevity Life Academy this year, and I wanted you to hear this from me.</p>",
     "<p>The Academy was built on one belief: everyone deserves a science-backed protocol for a longer, healthier life. Aging can now be measured and slowed, and the decades ahead can be the strongest.</p>",
-    "<p>On <strong>October 27</strong> we are hosting <strong>The Longevity Masterclass of the Year</strong>, and I would like to offer you a seat.</p>",
-    JULIE, LEARN, PRICE.replace("Your student pricing", "Your seat"), CLICK]
+    "<p>On <strong>October 27</strong> we are hosting <strong>The Longevity Masterclass of the Year</strong>, and I would like to offer you one of a limited number of seats.</p>",
+    JULIE, LEARN, PRICE.replace("Your seat, and your student benefit", "Your seat").replace("Included with your VIP seat", "Included with the VIP seat"), CLICK]
 
 SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
         "incomplete": "{short} students: your Longevity Masterclass invitation",
@@ -80,7 +82,7 @@ SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
 H1 = {"alumni": "{name} alumni are invited to <em>The Longevity Masterclass of the Year</em>",
       "incomplete": "{name} students are invited to <em>The Longevity Masterclass of the Year</em>",
       "leads": "You are invited to <em>The Longevity Masterclass of the Year</em>"}
-PRE = "Student pricing from $49 for Julie Gibson Clark's live masterclass, 72 hours before public release."
+PRE = "An invitation for our students: Julie Gibson Clark's live masterclass, from $49, with a VIP benefit."
 HERO = {"alumni": "julie-zoom-host.jpg", "incomplete": "julie-portrait.jpg", "leads": "julie-zoom-grid.jpg"}
 
 EMAILS = [dict(
@@ -125,7 +127,12 @@ CSS = """
   .offer{background:#F5F0E5;border-left:4px solid #0A1E3F;border-radius:0 8px 8px 0;padding:18px 22px 4px;margin:0 0 20px}
   .offer p{font-size:17px;line-height:1.6;margin:0 0 14px}
   .offer strong{color:#0A1220}
-  .offer strong.promo{color:#2E6FB8;font-size:18px}
+  .promo-box{background:#0A1E3F;border-radius:8px;padding:18px 20px;margin:4px 0 16px;text-align:center}
+  .promo-box p{margin:0;color:#fff}
+  .promo-box .promo-k{font-size:13px;color:#9CC9F5;margin-bottom:6px}
+  .promo-box .promo-v{font-size:18px;line-height:1.4;font-weight:600}
+  .promo-box .promo-v span{color:#5EB6FF;font-size:24px;font-weight:700}
+  .promo-box .promo-s{font-size:13px;color:#B8C4DE;margin-top:6px}
   .details td.v b{color:#0A1220;font-weight:700}
   ul{margin:0 0 18px;padding-left:22px;text-align:left}
   li{font-size:17px;line-height:1.6;color:#2a3244;margin:0 0 8px}
@@ -200,7 +207,7 @@ def plain(e):
     b = BRANDS[e["brand"]]; parts = [f"Subject: {e['subject']}", f"Preheader: {e['preheader']}", "", visible(e["h1"]), ""]
     for x in e["body"]:
         x = x.replace("%IF !empty($FIRSTNAME)%", "").replace("%ELSE%Shalom,%/IF%", "").replace("%ELSE%Hi,%/IF%", "")
-        x = x.replace("<h2>", "\n## ").replace("</h2>", " |BR| ").replace("</p><p>", " |BR| ")
+        x = x.replace("<h2>", "\n## ").replace("</h2>", " |BR| ").replace("</p><p>", " |BR| ").replace('</p><div class="promo-box"><p class="promo-k">', " |BR| ").replace('</p><p class="promo-v">', ": ").replace('</p><p class="promo-s">', ", ").replace("</p></div><p>", " |BR| ")
         if "<li>" in x:
             lead = visible(x.split("<ul>")[0]).replace(" |BR|", "").strip(); items = re.findall(r"<li>(.*?)</li>", x)
             parts.append(lead); parts += ["- " + visible(i) for i in items]
@@ -343,7 +350,7 @@ Word count vs the approved set: these are cold invitations written as a letter f
 Fourth use case per school: not named by Omri yet; same shell, add as `*-<usecase>-01`.
 
 ## Offer statements and their source
-- "For 72 hours, seats are held for … before general release": Omri's offer to students (brief of 13 Oct). The checkout does not enforce a hold.
+- "One of a limited number of seats" and "Seats are limited": live Zoom sessions. No hold, no reservation and no pre-public window is claimed anywhere in the emails.
 - "Exclusive $249 promo code toward her full course": the VIP seat's Blueprint code (MASTERCLASS-VIP), shown after VIP payment, valid to 31 Dec 2026. No discount code exists on the masterclass price; none is promised.
 - Senders verified in Omri's inbox: Noa Shalev (5 Rosen campaigns, Sep 2026); Sophia Green (the only IIBS-domain campaign sender received); Emma | Longevity Advisor (LLA automations).
 

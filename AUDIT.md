@@ -7,15 +7,15 @@ tokens %FIRSTNAME%, %UNSUBSCRIBELINK% (schools also %EMAIL%); whole-file length 
 ## Per email
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
-| lla-leads-01 | 54 | 85 | 346 | 2045 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
-| iibs-alumni-01 | 69 | 99 | 388 | 2390 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| iibs-incomplete-01 | 71 | 99 | 400 | 2447 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| iibs-leads-01 | 67 | 99 | 384 | 2363 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
-| rosen-alumni-01 | 51 | 99 | 380 | 2282 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| rosen-incomplete-01 | 53 | 99 | 392 | 2339 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| rosen-leads-01 | 49 | 99 | 377 | 2269 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| lla-leads-01 | 54 | 85 | 350 | 2061 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
+| iibs-alumni-01 | 69 | 100 | 404 | 2460 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| iibs-incomplete-01 | 71 | 100 | 416 | 2517 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| iibs-leads-01 | 67 | 100 | 400 | 2433 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| rosen-alumni-01 | 51 | 100 | 396 | 2352 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| rosen-incomplete-01 | 53 | 100 | 408 | 2409 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| rosen-leads-01 | 49 | 100 | 393 | 2339 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
 
-Word count vs the approved set: these are cold invitations written as a letter from the school's advisor, with the longevity paragraph, the Julie paragraph and three bullets that the lifecycle emails did not need. Longest is 400 words whole file.
+Word count vs the approved set: these are cold invitations written as a letter from the school's advisor, with the longevity paragraph, the Julie paragraph and three bullets that the lifecycle emails did not need. Longest is 416 words whole file.
 
 ## Format checks
 - Header: LLA = navy header with the LLA logo (approved). Schools = white header with the school's own logo lockup (which carries "By eTeacher"). No other logo anywhere in the email.
@@ -44,7 +44,7 @@ Word count vs the approved set: these are cold invitations written as a letter f
 Fourth use case per school: not named by Omri yet; same shell, add as `*-<usecase>-01`.
 
 ## Offer statements and their source
-- "For 72 hours, seats are held for … before general release": Omri's offer to students (brief of 13 Oct). The checkout does not enforce a hold.
+- "One of a limited number of seats" and "Seats are limited": live Zoom sessions. No hold, no reservation and no pre-public window is claimed anywhere in the emails.
 - "Exclusive $249 promo code toward her full course": the VIP seat's Blueprint code (MASTERCLASS-VIP), shown after VIP payment, valid to 31 Dec 2026. No discount code exists on the masterclass price; none is promised.
 - Senders verified in Omri's inbox: Noa Shalev (5 Rosen campaigns, Sep 2026); Sophia Green (the only IIBS-domain campaign sender received); Emma | Longevity Advisor (LLA automations).
 
