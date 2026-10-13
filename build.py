@@ -38,31 +38,35 @@ BRANDS = {
 }
 
 # ---------- copy (facts: live masterclass page, 13 Oct 2026) ----------
+def hosted(b):
+    return ('<table role="presentation" class="hosted" align="center"><tr>'
+            f'<td><img src="{BASE}/assets/eteacher-group-logo.png" alt="eTeacher Group" style="height:22px;width:auto;display:block"></td>'
+            '<td class="x">&times;</td>'
+            f'<td><img src="{BASE}/assets/lla-logo-dark.png" alt="Longevity Life Academy" style="height:40px;width:auto;display:block"></td>'
+            '</tr></table><p class="hosted-cap">Hosted by Longevity Life Academy, an eTeacher Group school</p>')
 def longevity(b):
-    opener = ("eTeacher Group opened <strong>Longevity Life Academy</strong> this year to teach this live, in plain language, and we want our own students to have it first."
-              if b != "lla" else "We opened Longevity Life Academy this year to teach this live, in plain language, and the people who asked about us hear about it first.")
-    return ("<p>Longevity has become one of the most important fields in science. We now know that aging can be measured, slowed and in part reversed, "
-            "and that healthspan, the years lived in full health, depends on sleep, food, movement and daily habits far more than most people assume. "
-            f"The decades ahead can be the best ones. {opener}</p>")
+    reason = ("That is why eTeacher Group opened Longevity Life Academy this year, and why we want our own students to have this first."
+              if b != "lla" else "That is why we opened Longevity Life Academy this year, and why you hear about this first.")
+    return ("<h2>Why longevity, and why now</h2>"
+            "<p>Aging can now be measured, slowed and in part reversed, and the years we live in full health depend on sleep, food, movement "
+            f"and daily habits far more than most people assume. The decades ahead can be the best ones. {reason}</p>")
 def event(b):
-    host = "we are hosting" if b == "lla" else "the Academy is hosting"
-    return (f"<p>On <strong>October 27</strong> {host} <strong>The Longevity Masterclass of the Year</strong>: "
-            f"60 minutes live on Zoom with <strong>Julie Gibson Clark</strong>, with a second date on <strong>November 14</strong>.</p>")
-JULIE = ("<p>Julie is the <strong>second slowest-aging human ever measured</strong>. By verified testing she ages <strong>six years in a decade</strong>, "
-         "which places her No. 2 in the world on the Rejuvenation Olympics leaderboard, ahead of Bryan Johnson&rsquo;s two-million-dollar program. "
-         "She is 56, a working single mother from Phoenix, and her routine costs about $100 a month. Fortune, Business Insider and the Daily Mail have all covered her.</p>")
-LEARN = ("<p>In the hour she reveals her complete protocol:</p>"
+    return ("<h2>The Longevity Masterclass of the Year</h2>"
+            "<p><strong>October 27</strong> (or <strong>November 14</strong>), 60 minutes live on Zoom with <strong>Julie Gibson Clark</strong>, "
+            "the <strong>second slowest-aging human ever measured</strong>. She ages <strong>six years in a decade</strong>, ranks No. 2 in the world on the "
+            "Rejuvenation Olympics leaderboard ahead of Bryan Johnson&rsquo;s two-million-dollar program, and does it on about $100 a month. "
+            "Fortune, Business Insider and the Daily Mail have all covered her.</p>")
+LEARN = ("<h2>What you will learn in the hour</h2>"
          "<ul><li>How biological aging is measured, and what actually moves the number</li>"
          "<li>Her rules for food, sleep and movement, with the numbers behind each</li>"
          "<li>Her full day, 5:00 am to 9:00 pm, including the four supplements she keeps</li></ul>")
 def access(who):
-    return (f"<p><strong>For 72 hours, seats are held for {who} before general release.</strong> Seats start at <strong>$49</strong>. "
-            f"The VIP seat adds a private 30-minute Q&amp;A with Julie and includes an exclusive <strong>$249 promo code</strong> toward her full course.</p>")
+    return (f"<p>Seats are held for {who} for <strong>72 hours</strong>. Seats start at <strong>$49</strong>; your access details are below.</p>")
 
 WHY = {
-    "alumni": "<p>As a graduate of {name}, you are part of the eTeacher Group community, so this invitation comes to you first.</p>",
-    "incomplete": "<p>As a student of {name}, you are part of the eTeacher Group community, so this invitation comes to you first. It is one live hour, with nothing to prepare and nothing to keep up with afterwards.</p>",
-    "leads": "<p>You asked about {enrol}, which makes you part of the eTeacher Group community, so this invitation comes to you first.</p>",
+    "alumni": "<p>As a graduate of {name}, you are part of the eTeacher Group community, so this invitation reaches you first.</p>",
+    "incomplete": "<p>As a student of {name}, you are part of the eTeacher Group community, so this invitation reaches you first. It is one live hour, with nothing to prepare and nothing to keep up with afterwards.</p>",
+    "leads": "<p>You asked about {enrol}, which makes you part of the eTeacher Group community, so this invitation reaches you first.</p>",
 }
 SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
         "incomplete": "{short} students: your Longevity Masterclass invitation",
@@ -79,7 +83,7 @@ EMAILS = [dict(
     subject="Your invitation: The Longevity Masterclass of the Year", preheader="60 minutes live on Zoom with Julie Gibson Clark. Seats held for you for 72 hours. From $49.",
     h1="You are invited to <em>The Longevity Masterclass of the Year</em>", hero="julie-zoom-room.jpg",
     body=[f"<p>{hi()}</p>", "<p>You asked about enrolling in Longevity Life Academy this year, so this invitation reaches you first.</p>",
-          longevity("lla"), event("lla"), JULIE, LEARN, access("the people on this list")])]
+          longevity("lla"), event("lla"), LEARN, access("the people on this list")])]
 for b in ("iibs", "rosen"):
     B = BRANDS[b]
     for seg in ("alumni", "incomplete", "leads"):
@@ -87,11 +91,13 @@ for b in ("iibs", "rosen"):
             segment={"alumni": "alumni (completed a course)", "incomplete": "students who enrolled and did not finish", "leads": "leads (asked about enrolling, never enrolled)"}[seg],
             ac=f"{b.upper()}_Masterclass_Blast_{seg.capitalize()}", campaign=f"{b}_masterclass_blast",
             subject=SUBJ[seg].format(short=B["short"]), preheader=PRE, h1=H1[seg].format(name=B["name"]), hero=HERO[seg],
-            body=[f"<p>{shalom()}</p>", WHY[seg].format(name=B["name"], enrol=B["enrol"]), longevity(b), event(b), JULIE, LEARN, access(WHO[seg])]))
+            body=[f"<p>{shalom()}</p>", WHY[seg].format(name=B["name"], enrol=B["enrol"]), hosted(b), longevity(b), event(b), LEARN, access(WHO[seg])]))
 
-DETAILS = [("Instructor", "Julie Gibson Clark, Longevity Life Academy"), ("Format", "Live on Zoom, 60 minutes"),
-           ("Dates", "Tue, October 27, 7:00 PM ET<br>Sat, November 14, 1:00 PM ET"), ("Seats", "From $49"),
-           ("VIP seat", "$79: private 30-minute Q&amp;A, $249 promo code"), ("Refund", "14 days, both seats")]
+DETAILS = [("First access", "Seats held for eTeacher students for 72 hours"),
+           ("Dates", "Tue, October 27, 7:00 PM ET<br>Sat, November 14, 1:00 PM ET, live on Zoom"),
+           ("Seats", "From $49"),
+           ("VIP seat", "$79. Private 30-minute Q&amp;A with Julie, plus your <b>$249 promo code</b> toward her full course, The Longevity Blueprint"),
+           ("Refund", "14 days, both seats")]
 
 # ---------- the approved shell ----------
 CSS = """
@@ -115,6 +121,12 @@ CSS = """
   h1 em{font-style:italic;color:#2E6FB8}
   p{font-size:17px;line-height:1.65;color:#2a3244;margin:0 0 18px}
   p strong{color:#0A1220;font-weight:700}
+  h2{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:21px;line-height:1.3;color:#0A1220;margin:28px 0 10px}
+  .hosted{margin:6px auto 2px;border-collapse:collapse}
+  .hosted td{vertical-align:middle;padding:0 10px}
+  .hosted td.x{font-size:18px;color:#7A8497;padding:0 4px}
+  .hosted-cap{font-size:13px;color:#7A8497;margin:6px 0 10px}
+  .details td.v b{color:#0A1220;font-weight:700}
   ul{margin:0 0 18px;padding-left:22px;text-align:left}
   li{font-size:17px;line-height:1.6;color:#2a3244;margin:0 0 8px}
   .details{background:#F5F0E5;border-radius:8px;padding:24px 28px;margin:26px 0}
@@ -136,19 +148,21 @@ CSS = """
   .footer hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:14px auto;max-width:220px}
   .footer .fine{font-size:11px;line-height:1.5;color:#8494B4;padding:0 20px}
   .footer .fine a{color:#8494B4;text-decoration:underline}
+  .sfooter{background:#F3F5F9;padding:24px 28px 22px;text-align:center;border-top:1px solid #E3E8F0}
+  .sfooter p{font-size:12px;line-height:1.7;color:#56627A;margin:0}
+  .sfooter a{color:#56627A;text-decoration:underline}
   @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.top-white img.school{height:56px}.top-white img.etg{height:22px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
 """
 def header(b):
     if not b["logo"]:
         return f'<div class="top-navy"><img src="{BASE}/assets/lla-logo-800w.png" alt="Longevity Life Academy by eTeacher Group"></div>'
-    return (f'<div class="top-white"><table role="presentation"><tr><td style="width:58%"><img class="school" src="{BASE}/assets/{b["logo"]}" alt="{b["name"]}"></td>'
-            f'<td style="width:42%"><p class="of">A school of</p><img class="etg" src="{BASE}/assets/eteacher-group-logo.png" alt="eTeacher Group"></td></tr></table></div>')
+    return f'<div class="top-white" style="text-align:center"><img class="school" src="{BASE}/assets/{b["logo"]}" alt="{b["name"]}, by eTeacher" style="display:inline-block"></div>'
 def footer(b):
-    logo = (f'<img src="{BASE}/assets/lla-logo-800w.png" alt="Longevity Life Academy">' if not b["logo"]
-            else f'<img class="etg" src="{BASE}/assets/eteacher-group-logo-white.png" alt="eTeacher Group">')
-    addr = f"<br>{b['footer_addr']}" if b["footer_addr"] else ""
-    return (f'<div class="footer">\n    {logo}\n    <p class="tag">{b["footer_tag"]}</p>\n    <hr>\n'
-            f'    <p class="fine">{b["footer_reason"]} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a>{addr}</p>\n  </div>')
+    if not b["logo"]:
+        return (f'<div class="footer">\n    <img src="{BASE}/assets/lla-logo-800w.png" alt="Longevity Life Academy">\n    <p class="tag">{b["footer_tag"]}</p>\n    <hr>\n'
+                f'    <p class="fine">{b["footer_reason"]} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a> &nbsp;&middot;&nbsp; <a href="https://www.longevitylifeacademy.com/privacy.html">Privacy</a></p>\n  </div>')
+    return (f'<div class="sfooter">\n    <p>{b["footer_tag"]}<br>{b["footer_addr"]}</p>\n'
+            f'    <p>{b["footer_reason"]} &nbsp;&middot;&nbsp; <a href="%UNSUBSCRIBELINK%">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="%UPDATELINK%">Update preferences</a></p>\n  </div>')
 
 def render(e):
     b = BRANDS[e["brand"]]; href = cta(e["campaign"], e["id"]); body = "\n".join("    " + x for x in e["body"])
@@ -171,7 +185,7 @@ def render(e):
 {body}
     <div class="btn-row"><a class="btn" href="{href}">{b['button']}</a><p class="btn-meta">Pick your date at checkout. 14-day full refund, both seats.</p></div>
     <div class="details">
-      <p class="dh">The masterclass at a glance</p>
+      <p class="dh">Your student access</p>
       <table role="presentation">
 {rows}
       </table>
@@ -194,10 +208,12 @@ def plain(e):
     b = BRANDS[e["brand"]]; parts = [f"Subject: {e['subject']}", f"Preheader: {e['preheader']}", "", visible(e["h1"]), ""]
     for x in e["body"]:
         x = x.replace("%IF !empty($FIRSTNAME)%", "").replace("%ELSE%Shalom,%/IF%", "").replace("%ELSE%Hi,%/IF%", "")
+        x = x.replace("<h2>", "\n## ").replace("</h2>", " |BR| ")
+        if 'class="hosted"' in x: x = "[eTeacher Group logo × Longevity Life Academy logo] Hosted by Longevity Life Academy, an eTeacher Group school"
         if "<li>" in x:
-            lead = visible(x.split("<ul>")[0]); items = re.findall(r"<li>(.*?)</li>", x)
+            lead = visible(x.split("<ul>")[0]).replace(" |BR|", "").strip(); items = re.findall(r"<li>(.*?)</li>", x)
             parts.append(lead); parts += ["- " + visible(i) for i in items]
-        else: parts.append(visible(x))
+        else: parts.append(visible(x).replace(" |BR| ", "\n").replace("|BR|", "\n").strip())
         parts.append("")
     parts += [f"[Button] {html.unescape(b['button'])}", ""] + [visible(l) for l in b["sign"].split("<br>")]
     return "\n".join(parts)
@@ -217,7 +233,7 @@ for e in EMAILS:
                          words=len(v.split()), chars=len(v), body_words=len(visible(" ".join(e["body"])).split()),
                          emdash=out.count("\u2014") + out.count("\u2013"), bangs=len(re.findall(r"[A-Za-z0-9]!(?!important|empty|\[)", re.sub(r"<style.*?</style>", "", out, flags=re.S))),
                          tokens=all(t in out for t in ("%FIRSTNAME%", "%UNSUBSCRIBELINK%", "%UPDATELINK%")),
-                         anatomy=all(k in out for k in ('class="divider"', 'class="alert"', 'class="hero-img"', "<h1>", 'class="btn"', 'class="details"', 'class="signoff"', 'class="footer"'))))
+                         anatomy=all(k in out for k in ('class="divider"', 'class="alert"', 'class="hero-img"', "<h1>", 'class="btn"', 'class="details"', 'class="signoff"', 'footer"'))))
 json.dump(manifest, open("manifest.json", "w"), indent=2)
 for m in manifest: print(m["id"], "| subj", m["subject_len"], "| pre", m["preheader_len"], "| body", m["body_words"], "| whole", m["words"], "| chars", m["chars"], "| dash", m["emdash"], "| !", m["bangs"])
 

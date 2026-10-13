@@ -7,15 +7,15 @@ tokens %FIRSTNAME%, %UNSUBSCRIBELINK%, %UPDATELINK%; whole-file length 191 to 26
 ## Per email
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
-| lla-leads-01 | 54 | 91 | 461 | 2727 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
-| iibs-alumni-01 | 69 | 100 | 488 | 2976 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| iibs-incomplete-01 | 71 | 100 | 504 | 3070 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| iibs-leads-01 | 67 | 100 | 487 | 2964 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
-| rosen-alumni-01 | 51 | 100 | 479 | 2866 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| rosen-incomplete-01 | 53 | 100 | 495 | 2960 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| rosen-leads-01 | 49 | 100 | 478 | 2864 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| lla-leads-01 | 54 | 91 | 409 | 2401 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
+| iibs-alumni-01 | 69 | 100 | 444 | 2704 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| iibs-incomplete-01 | 71 | 100 | 460 | 2798 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| iibs-leads-01 | 67 | 100 | 443 | 2692 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| rosen-alumni-01 | 51 | 100 | 435 | 2594 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| rosen-incomplete-01 | 53 | 100 | 451 | 2688 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| rosen-leads-01 | 49 | 100 | 434 | 2592 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
 
-Word count vs the approved set: these are cold invitations with a who-is-Julie paragraph and three bullets that the lifecycle emails did not need; Omri allowed "a little more". All seven are within +242 words of the set's longest email.
+Word count vs the approved set: these are cold invitations with a who-is-Julie paragraph and three bullets that the lifecycle emails did not need; Omri allowed "a little more". All seven are within +198 words of the set's longest email.
 
 ## Format checks
 - Header: LLA = navy header with the LLA logo (approved). Schools = white header, school logo (84px tall) left, "A school of" + eTeacher Group logo (30px) right. Two logos, not three.
