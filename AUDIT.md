@@ -7,15 +7,15 @@ tokens %FIRSTNAME%, %UNSUBSCRIBELINK% (schools also %EMAIL%); whole-file length 
 ## Per email
 | Email | Subject chars | Preheader chars | Words (whole file) | Chars | Hero | AC tokens | Approved anatomy | Em/en dashes | Exclamation marks |
 |---|---|---|---|---|---|---|---|---|---|
-| lla-leads-01 | 54 | 90 | 427 | 2414 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
-| iibs-alumni-01 | 69 | 73 | 465 | 2739 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| iibs-incomplete-01 | 71 | 73 | 477 | 2798 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| iibs-leads-01 | 67 | 73 | 459 | 2687 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
-| rosen-alumni-01 | 51 | 73 | 455 | 2613 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
-| rosen-incomplete-01 | 53 | 73 | 467 | 2672 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
-| rosen-leads-01 | 49 | 73 | 452 | 2593 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| lla-leads-01 | 54 | 90 | 435 | 2494 | julie-zoom-room.jpg 1200x700 117KB | yes | yes | 0 | 0 |
+| iibs-alumni-01 | 69 | 73 | 476 | 2819 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| iibs-incomplete-01 | 71 | 73 | 488 | 2878 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| iibs-leads-01 | 67 | 73 | 470 | 2767 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
+| rosen-alumni-01 | 51 | 73 | 466 | 2693 | julie-zoom-host.jpg 1200x700 109KB | yes | yes | 0 | 0 |
+| rosen-incomplete-01 | 53 | 73 | 478 | 2752 | julie-portrait.jpg 1200x700 98KB | yes | yes | 0 | 0 |
+| rosen-leads-01 | 49 | 73 | 463 | 2673 | julie-zoom-grid.jpg 1200x700 104KB | yes | yes | 0 | 0 |
 
-Word count vs the approved set: these are cold invitations written as a letter from the school's advisor, with the longevity paragraph, the Julie paragraph and three bullets that the lifecycle emails did not need. Longest is 477 words whole file.
+Word count vs the approved set: these are cold invitations written as a letter from the school's advisor, with the longevity paragraph, the Julie paragraph and three bullets that the lifecycle emails did not need. Longest is 488 words whole file.
 
 ## Format checks
 - Header: LLA = navy header with the LLA logo (approved). Schools = white header with the school's own logo lockup (which carries "By eTeacher"). No other logo anywhere in the email.

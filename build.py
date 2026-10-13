@@ -18,19 +18,19 @@ def hi(): return "%IF !empty($FIRSTNAME)%Hi %FIRSTNAME%,%ELSE%Hi,%/IF%"
 
 BRANDS = {
     "lla": dict(name="Longevity Life Academy", logo=None, sender="Emma | Longevity Advisor <advisor@longevitylifeacademy.com>",
-                button="Reserve My Seat", alert_k="Live on Zoom", alert_v="October 27 or November 14, 7:00 PM ET / 1:00 PM ET",
+                button="Reserve My Seat", alert_k="Live on Zoom", alert_v="Seats from $49, held for you for 72 hours",
                 sign="To your longest, strongest life,<br><b>Emma</b><br>Longevity Advisor<br>Longevity Life Academy",
                 footer_tag="It&rsquo;s Your Life. Live It Well. Powered by eTeacher Group.", footer_reason="You received this because you asked about Longevity Life Academy", footer_addr=""),
     "iibs": dict(name="Israel Institute of Biblical Studies", short="Israel Biblical Studies", logo="iibs-logo.png",
                  sender="Sophia Green, Israel Biblical Studies <SophiaG@israelbiblicalstudies.com>", button="RESERVE MY SEAT",
-                 alert_k="First access for our students", alert_v="The Longevity Masterclass of the Year",
+                 alert_k="First access for our students", alert_v="Seats from $49, held for 72 hours",
                  sign="Warmly,<br><b>Sophia Green</b><br>Admissions Advisor<br>Israel Institute of Biblical Studies",
                  footer_tag="&copy; 2026 Israel Institute of Biblical Studies by eTeacher Group<br>All Rights Reserved.",
                  footer_addr="All Rights Reserved. The Israel Institute of Biblical Studies by eTeacher Group, "+ADDRESS,
                  course="course", enrol="enrolling at the Israel Institute of Biblical Studies"),
     "rosen": dict(name="Rosen School of Hebrew", short="Rosen", logo="rosen-logo.png",
                   sender="Noa Shalev, Campus Manager, Rosen School of Hebrew <admissions@rosenhebrewschool.com>", button="RESERVE MY SEAT",
-                  alert_k="First access for our students", alert_v="The Longevity Masterclass of the Year",
+                  alert_k="First access for our students", alert_v="Seats from $49, held for 72 hours",
                   sign="Warmly,<br><b>Noa Shalev</b><br>Campus Manager<br>Rosen School of Hebrew",
                   footer_tag="&copy; 2026 Rosen School of Hebrew by eTeacher Group<br>All Rights Reserved.",
                   footer_addr="All Rights Reserved. The Rosen School of Hebrew by eTeacher Group, "+ADDRESS,
@@ -42,10 +42,13 @@ def common(b, who_hold):
     host = "we are hosting" if b == "lla" else "the Academy is hosting"
     return [
         "<p>Aging can now be measured and slowed, and the daily choices around nutrition, sleep, movement and stress decide how many of the decades ahead we live in full health.</p>",
-        f"<p>On <strong>October 27</strong>, {host} <strong>The Longevity Masterclass of the Year</strong>, and I would like to give you a seat.</p>",
+        f"<p>On <strong>October 27</strong>, {host} <strong>The Longevity Masterclass of the Year</strong>, and I would like to offer you a seat, with first access and our student pricing.</p>",
+        "<h2>The teacher: the second slowest-aging person on Earth</h2>"
         "<p>The teacher is Julie Gibson Clark, 56, a working single mother from Phoenix and, by verified testing, the second slowest-aging person in the world: ten years pass, and she ages six. She ranks No. 2 on the Rejuvenation Olympics leaderboard, ahead of Bryan Johnson, on about $100 a month.</p>",
         "<p>For 60 minutes, live on Zoom, she walks through how biological aging is measured, her rules for food, sleep and movement, and her full day from 5:00 am to 9:00 pm, including the four supplements she keeps.</p>",
-        f"<p>{who_hold} for the next <strong>72 hours</strong>, before general release, and start at <strong>$49</strong>. The VIP seat, at $79, adds a private 30-minute Q&amp;A with Julie and an exclusive <strong>$249 promo code</strong> toward her full course.</p>",
+        "<h2>Your student access</h2>"
+        f'<div class="offer"><p><strong>Seats from $49, {who_hold} for 72 hours</strong> before general release.</p>'
+        '<p><strong>VIP seat, $79:</strong> a private 30-minute Q&amp;A with Julie and an exclusive <strong class="promo">$249 promo code</strong> toward her full course.</p></div>',
         "<p>If you would like a seat, click below.</p>",
         "<p>You will choose your date, October 27 or November 14, and your seat type on the next page.</p>",
     ]
@@ -59,13 +62,13 @@ def school_body(b, seg):
         "incomplete": f"<p>I am writing with an invitation of a different kind. As a student of {name}, you are part of the eTeacher Group family of students, and this reaches you before it opens to anyone else. There is nothing to catch up on. It is one live hour.</p>",
         "leads": f"<p>I am writing with an invitation of a different kind. You asked about studying at {name}, and that places you in the eTeacher Group family of students, so this reaches you before it opens to anyone else.</p>",
     }[seg]
-    hold = {"alumni": f"Seats are held for {B['short']} alumni", "incomplete": f"Seats are held for {B['short']} students", "leads": "Seats are held for you"}[seg]
+    hold = {"alumni": f"held for {B['short']} alumni", "incomplete": f"held for {B['short']} students", "leads": "held for you"}[seg]
     return [f"<p>{shalom()}</p>", open_,
         "<p>This year eTeacher Group opened a new school, Longevity Life Academy, built on a simple belief: that everyone deserves a science-backed protocol for a longer, healthier life.</p>"] + common(b, hold)
 
 LLA_BODY = [f"<p>{hi()}</p>",
     "<p>You asked about Longevity Life Academy this year, so I wanted you to hear this from me before anyone else.</p>",
-    "<p>The Academy was built on a simple belief: that everyone deserves a science-backed protocol for a longer, healthier life.</p>"] + common("lla", "Your seat is held")
+    "<p>The Academy was built on a simple belief: that everyone deserves a science-backed protocol for a longer, healthier life.</p>"] + common("lla", "held for you")
 
 SUBJ = {"alumni": "{short} alumni: your Longevity Masterclass invitation",
         "incomplete": "{short} students: your Longevity Masterclass invitation",
@@ -114,7 +117,11 @@ CSS = """
   h1 em{font-style:italic;color:#2E6FB8}
   p{font-size:17px;line-height:1.65;color:#2a3244;margin:0 0 18px}
   p strong{color:#0A1220;font-weight:700}
-  h2{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:21px;line-height:1.3;color:#0A1220;margin:28px 0 10px}
+  h2{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:21px;line-height:1.3;color:#0A1220;margin:30px 0 12px}
+  .offer{background:#F5F0E5;border-left:4px solid #0A1E3F;border-radius:0 8px 8px 0;padding:18px 22px 4px;margin:0 0 20px}
+  .offer p{font-size:17px;line-height:1.6;margin:0 0 14px}
+  .offer strong{color:#0A1220}
+  .offer strong.promo{color:#2E6FB8;font-size:18px}
   .details td.v b{color:#0A1220;font-weight:700}
   ul{margin:0 0 18px;padding-left:22px;text-align:left}
   li{font-size:17px;line-height:1.6;color:#2a3244;margin:0 0 8px}
@@ -194,7 +201,7 @@ def plain(e):
     b = BRANDS[e["brand"]]; parts = [f"Subject: {e['subject']}", f"Preheader: {e['preheader']}", "", visible(e["h1"]), ""]
     for x in e["body"]:
         x = x.replace("%IF !empty($FIRSTNAME)%", "").replace("%ELSE%Shalom,%/IF%", "").replace("%ELSE%Hi,%/IF%", "")
-        x = x.replace("<h2>", "\n## ").replace("</h2>", " |BR| ")
+        x = x.replace("<h2>", "\n## ").replace("</h2>", " |BR| ").replace("</p><p>", " |BR| ")
         if "<li>" in x:
             lead = visible(x.split("<ul>")[0]).replace(" |BR|", "").strip(); items = re.findall(r"<li>(.*?)</li>", x)
             parts.append(lead); parts += ["- " + visible(i) for i in items]
