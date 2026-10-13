@@ -110,11 +110,7 @@ CSS = """
   .top-navy{background:#0A1E3F;padding:30px 20px;text-align:center}
   .top-navy img{display:inline-block;height:104px;width:auto}
   .top-white{background:#FFFFFF;padding:24px 28px 20px}
-  .top-white table{width:100%;border-collapse:collapse}
-  .top-white td{vertical-align:middle}
   .top-white img.school{height:84px;width:auto;display:block}
-  .top-white img.etg{height:30px;width:auto;display:block;margin-left:auto}
-  .top-white .of{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#56627A;margin:0 0 6px;text-align:right}
   .divider{height:4px;background:#5EB6FF}
   .alert{background:#0A1E3F;padding:18px 24px;text-align:center;color:#fff;font-size:14px}
   .alert b{color:#5EB6FF;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-right:10px}
@@ -142,7 +138,6 @@ CSS = """
   .small{font-size:13px;color:#7A8497;line-height:1.6;margin:18px 0 0}
   .footer{background:#0A0C12;padding:32px 24px 20px;text-align:center;color:#B8C4DE}
   .footer img{height:74px;width:auto;margin-bottom:14px}
-  .footer img.etg{height:26px}
   .footer .tag{font-size:13px;color:#B8C4DE;margin:0 0 18px}
   .footer hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:14px auto;max-width:220px}
   .footer .fine{font-size:11px;line-height:1.5;color:#8494B4;padding:0 20px}
@@ -150,7 +145,7 @@ CSS = """
   .sfooter{background:#F3F5F9;padding:24px 28px 22px;text-align:center;border-top:1px solid #E3E8F0}
   .sfooter p{font-size:12px;line-height:1.7;color:#56627A;margin:0 0 8px}
   .sfooter a{color:#56627A;text-decoration:underline}
-  @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.top-white img.school{height:56px}.top-white img.etg{height:22px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
+  @media(max-width:520px){.body-inner{padding:32px 24px}h1{font-size:24px}.top-navy img{height:54px}.top-white img.school{height:56px}.details td{display:block;width:100%}.details td.k{padding-bottom:2px}.details td.v{padding-bottom:14px}}
 """
 def header(b):
     if not b["logo"]:
