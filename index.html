@@ -22,17 +22,18 @@
   .b.ok{background:#1D1D1F;border-color:#1D1D1F;color:#fff}
   iframe{width:100%;border:1px solid var(--line);border-radius:16px;background:#F5F0E5;display:block;min-height:900px}
   @media(max-width:900px){.email{grid-template-columns:1fr}h1{font-size:40px}h2{font-size:32px}header{padding:48px 20px 16px}main{padding:0 20px 64px}}
-</style><style>.version{margin:0 0 72px}.vtitle{font-size:44px;margin:0 0 6px;padding-top:24px;border-top:2px solid var(--ink)}.vnote{color:var(--mute);font-size:18px;margin:0 0 28px}</style></head><body>
+</style><style>.tabs{display:flex;gap:10px;margin:8px 0 40px}.tab{font:700 18px/1 inherit;padding:14px 22px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}.tab small{display:block;font-weight:500;font-size:13px;margin-top:6px;opacity:.75}.ver{display:none}.ver.on{display:block}</style></head><body>
 <header>
   <h1>Julie Masterclass invitation emails</h1>
-  <p>Two versions, both complete. Version 2 is the current set. Download the HTML, or copy it straight into ActiveCampaign.</p>
+  <p>Choose a version below. Download the HTML, or copy it straight into ActiveCampaign.</p>
+  <div class="tabs"><button class="tab on" data-v="v2">Version 2<small>15 October. 9 emails: 4 segments per school + Longevity leads</small></button><button class="tab" data-v="v1">Version 1<small>14 October. 7 emails, the original set</small></button></div>
 </header>
 <main>
-<section class="version"><h2 class="vtitle">Version 2</h2><p class="vnote">15 October. Three segments per school (alumni, students who did not finish, leads), plus the two Academy-sent lead emails. Invitation in the schools&rsquo; voice, 36% for 72 hours, no promo code.</p>
+<div class="ver" id="v2">
 <section><h2>Rosen School of Hebrew</h2><article class="email" id="rosen-alumni-02">
   <div class="side">
     <h3>Alumni</h3>
-    <p class="sub">Rosen School of Hebrew invites you to live longer, better</p>
+    <p class="sub">For Rosen graduates: an invitation to live longer, better</p>
     <p class="from">From Noa Shalev, Campus Manager, Rosen School of Hebrew</p>
     <div class="actions">
       <a class="b primary" href="rosen/rosen-alumni-02.html" download="rosen-alumni-02.html">Download HTML</a>
@@ -43,6 +44,20 @@
     </div>
   </div>
   <iframe title="rosen-alumni-02" data-src="rosen/rosen-alumni-02.html" loading="lazy" scrolling="no"></iframe>
+</article><article class="email" id="rosen-active-02">
+  <div class="side">
+    <h3>Active students</h3>
+    <p class="sub">For our Rosen students: an invitation to live longer, better</p>
+    <p class="from">From Noa Shalev, Campus Manager, Rosen School of Hebrew</p>
+    <div class="actions">
+      <a class="b primary" href="rosen/rosen-active-02.html" download="rosen-active-02.html">Download HTML</a>
+      <button class="b copy" data-file="rosen/rosen-active-02.html">Copy HTML</button>
+      <button class="b copy" data-file="text/rosen-active-02.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-room.jpg" download="rosen-active-02-image.jpg">Download image</a>
+      <a class="b" href="rosen/rosen-active-02.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <iframe title="rosen-active-02" data-src="rosen/rosen-active-02.html" loading="lazy" scrolling="no"></iframe>
 </article><article class="email" id="rosen-incomplete-02">
   <div class="side">
     <h3>Students who did not finish</h3>
@@ -75,7 +90,7 @@
 <section><h2>Israel Institute of Biblical Studies</h2><article class="email" id="iibs-alumni-02">
   <div class="side">
     <h3>Alumni</h3>
-    <p class="sub">Israel Biblical Studies invites you to live longer, better</p>
+    <p class="sub">For Institute graduates: an invitation to live longer, better</p>
     <p class="from">From Sophia Green, Israel Biblical Studies</p>
     <div class="actions">
       <a class="b primary" href="iibs/iibs-alumni-02.html" download="iibs-alumni-02.html">Download HTML</a>
@@ -86,6 +101,20 @@
     </div>
   </div>
   <iframe title="iibs-alumni-02" data-src="iibs/iibs-alumni-02.html" loading="lazy" scrolling="no"></iframe>
+</article><article class="email" id="iibs-active-02">
+  <div class="side">
+    <h3>Active students</h3>
+    <p class="sub">For our Institute students: an invitation to live longer, better</p>
+    <p class="from">From Sophia Green, Israel Biblical Studies</p>
+    <div class="actions">
+      <a class="b primary" href="iibs/iibs-active-02.html" download="iibs-active-02.html">Download HTML</a>
+      <button class="b copy" data-file="iibs/iibs-active-02.html">Copy HTML</button>
+      <button class="b copy" data-file="text/iibs-active-02.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-room.jpg" download="iibs-active-02-image.jpg">Download image</a>
+      <a class="b" href="iibs/iibs-active-02.html" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+  <iframe title="iibs-active-02" data-src="iibs/iibs-active-02.html" loading="lazy" scrolling="no"></iframe>
 </article><article class="email" id="iibs-incomplete-02">
   <div class="side">
     <h3>Students who did not finish</h3>
@@ -115,37 +144,23 @@
   </div>
   <iframe title="iibs-leads-02" data-src="iibs/iibs-leads-02.html" loading="lazy" scrolling="no"></iframe>
 </article></section>
-<section><h2>Longevity Life Academy</h2><article class="email" id="lla-leads-rosen-02">
+<section><h2>Longevity Life Academy</h2><article class="email" id="lla-leads-02">
   <div class="side">
-    <h3>Leads, sent from the Academy to the Rosen community</h3>
-    <p class="sub">For the Rosen community: an invitation to live longer, better</p>
+    <h3>Leads</h3>
+    <p class="sub">You looked into Longevity Life Academy. Start with one live hour.</p>
     <p class="from">From Emma | Longevity Advisor</p>
     <div class="actions">
-      <a class="b primary" href="lla/lla-leads-rosen-02.html" download="lla-leads-rosen-02.html">Download HTML</a>
-      <button class="b copy" data-file="lla/lla-leads-rosen-02.html">Copy HTML</button>
-      <button class="b copy" data-file="text/lla-leads-rosen-02.txt">Copy text</button>
-      <a class="b" href="assets/images/julie-zoom-room.jpg" download="lla-leads-rosen-02-image.jpg">Download image</a>
-      <a class="b" href="lla/lla-leads-rosen-02.html" target="_blank" rel="noopener">Open</a>
+      <a class="b primary" href="lla/lla-leads-02.html" download="lla-leads-02.html">Download HTML</a>
+      <button class="b copy" data-file="lla/lla-leads-02.html">Copy HTML</button>
+      <button class="b copy" data-file="text/lla-leads-02.txt">Copy text</button>
+      <a class="b" href="assets/images/julie-zoom-room.jpg" download="lla-leads-02-image.jpg">Download image</a>
+      <a class="b" href="lla/lla-leads-02.html" target="_blank" rel="noopener">Open</a>
     </div>
   </div>
-  <iframe title="lla-leads-rosen-02" data-src="lla/lla-leads-rosen-02.html" loading="lazy" scrolling="no"></iframe>
-</article><article class="email" id="lla-leads-iibs-02">
-  <div class="side">
-    <h3>Leads, sent from the Academy to the Institute community</h3>
-    <p class="sub">For the Institute community: an invitation to live longer, better</p>
-    <p class="from">From Emma | Longevity Advisor</p>
-    <div class="actions">
-      <a class="b primary" href="lla/lla-leads-iibs-02.html" download="lla-leads-iibs-02.html">Download HTML</a>
-      <button class="b copy" data-file="lla/lla-leads-iibs-02.html">Copy HTML</button>
-      <button class="b copy" data-file="text/lla-leads-iibs-02.txt">Copy text</button>
-      <a class="b" href="assets/images/julie-zoom-room.jpg" download="lla-leads-iibs-02-image.jpg">Download image</a>
-      <a class="b" href="lla/lla-leads-iibs-02.html" target="_blank" rel="noopener">Open</a>
-    </div>
-  </div>
-  <iframe title="lla-leads-iibs-02" data-src="lla/lla-leads-iibs-02.html" loading="lazy" scrolling="no"></iframe>
+  <iframe title="lla-leads-02" data-src="lla/lla-leads-02.html" loading="lazy" scrolling="no"></iframe>
 </article></section>
-</section>
-<section class="version"><h2 class="vtitle">Version 1</h2><p class="vnote">14 October. The original set: three segments per school plus the Academy leads email. Standard and VIP pricing with the promo code.</p>
+</div>
+<div class="ver" id="v1">
 <section><h2>Rosen School of Hebrew</h2><article class="email" id="rosen-alumni-01">
   <div class="side">
     <h3>Alumni</h3>
@@ -247,7 +262,7 @@
   </div>
   <iframe title="lla-leads-01" data-src="lla/lla-leads-01.html" loading="lazy" scrolling="no"></iframe>
 </article></section>
-</section>
+</div>
 </main>
 <script>
 (function(){
@@ -265,4 +280,5 @@
   });
 })();
 </script>
+<script>document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===t)});document.querySelectorAll('.ver').forEach(function(v){v.classList.toggle('on',v.id===t.getAttribute('data-v'))});});});document.getElementById('v2').classList.add('on');</script>
 </body></html>
