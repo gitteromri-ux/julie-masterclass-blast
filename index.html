@@ -251,7 +251,7 @@
 </main>
 <script>
 (function(){
-  function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\\(\\$FIRSTNAME\\)%([\\s\\S]*?)%ELSE%[\\s\\S]*?%\\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }
+  function acPreview(f){ try{ var d=f.contentDocument; if(!d) return; var w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); var n; var re=/%IF !empty\(\$FIRSTNAME\)%([\s\S]*?)%ELSE%[\s\S]*?%\/IF%/g; while((n=w.nextNode())){ if(n.nodeValue.indexOf('%IF')>-1) n.nodeValue=n.nodeValue.replace(re,'$1'); } }catch(e){} }
   function fit(f){ try{ var h=f.contentDocument.documentElement.scrollHeight; if(h>300) f.style.height=(h+8)+'px'; }catch(e){} }
   document.querySelectorAll('iframe[data-src]').forEach(function(f){ f.addEventListener('load',function(){ acPreview(f); fit(f); setTimeout(function(){fit(f)},800); }); f.src=f.getAttribute('data-src'); });
   document.querySelectorAll('.b.copy').forEach(function(b){
